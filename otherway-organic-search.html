@@ -1,0 +1,261 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Otherway Organic Search</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: single 760px column, fixed dark top bar with section nav, stat tiles, then numbered sections (FlyRank report style, light only) */
+:root{--mint:#54e399;--mint-light:#7eefc1;--mint-dark:#1a7a4a;--mint-wash:#e3f7ec;--amber:#e8a13a;--amber-wash:#fbf0dd;--amber-dark:#8a5a12;--ink:#051f21;--bar:#051f21;--bar-text:#c4d2cd;--paper:#f6f9f8;--card:#fff;--sunken:#edf2f0;--line:#dfe6e4;--muted:#56696a;--faint:#7b8d8c;--step-bg:#051f21;--step-fg:#fff;
+--sans:Geist,"Helvetica Neue",Arial,sans-serif;--label:Manrope,Arial,sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,monospace;--col:760px}
+:root{color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.7 var(--sans)}
+a{color:inherit;text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--mint-dark);outline-offset:3px;border-radius:4px}
+code{font-family:var(--mono);font-size:.84em;background:var(--sunken);border:1px solid var(--line);border-radius:5px;padding:1px 6px;overflow-wrap:anywhere}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bar)}
+.top{position:fixed;top:0;left:0;right:0;padding-top:env(safe-area-inset-top,0px);z-index:20;background:var(--bar);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.top-in{max-width:calc(var(--col) + 32px);margin:auto;height:64px;display:flex;align-items:center;gap:var(--g,32px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.brand{font-weight:700;font-size:20px;letter-spacing:-.04em;text-decoration:none;flex:0 0 auto;color:#fff}
+.nav{display:flex;justify-content:flex-end;margin-left:auto;gap:2px;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1 1 0%}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;font-size:13px;color:var(--bar-text);text-decoration:none;padding:7px 11px;border-radius:999px;transition:background .15s,color .15s}
+.nav a:hover,.nav a.active{background:rgba(84,227,153,.12);color:var(--mint-light)}
+@media(max-width:860px){.top-in{--g:16px}.nav{justify-content:flex-start}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.nav a{transition:none}}
+
+main{max-width:calc(var(--col) + 32px);margin:0 auto;padding-top:calc(64px + 56px + env(safe-area-inset-top,0px));padding-bottom:80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font:600 10.5px var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 6px}
+h1{font-size:34px;line-height:1.15;letter-spacing:-.025em;font-weight:500;margin:0 0 12px;text-wrap:balance}
+.lede{color:var(--muted);font-size:16px;margin:0 0 28px;max-width:620px}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 8px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-size:26px;font-weight:500;letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
+.stat span{font:500 12px var(--label);color:var(--muted)}
+@media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}h1{font-size:28px}}
+
+section{padding:48px 0 8px;border-top:1px solid var(--line);margin-top:48px}
+.head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 4px}
+h2{font-size:24px;line-height:1.25;letter-spacing:-.02em;font-weight:500;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 20px}
+h3{font-size:16px;font-weight:500;margin:28px 0 8px}
+.badge{font:700 9.5px var(--label);letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--mint-wash);color:var(--mint-dark)}
+.badge.next{background:var(--amber-wash);color:var(--amber-dark)}
+
+ul.list{list-style:none;padding:0;margin:0}
+ul.list li{position:relative;padding:10px 0 10px 20px;border-bottom:1px solid var(--line)}
+ul.list li:last-child{border-bottom:0}
+ul.list li::before{content:"";position:absolute;left:2px;top:19px;width:7px;height:7px;border-radius:50%;background:var(--mint)}
+ul.list.todo li::before{background:var(--amber)}
+ul.list b{font-weight:600}
+
+.tbl{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
+.tbl th,.tbl td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.tbl th{font:600 10.5px var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--faint);background:var(--sunken);white-space:nowrap}
+.tbl a{font-weight:500;color:var(--mint-dark);overflow-wrap:anywhere}
+.tbl td.n,.tbl th.n{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.tbl td.q{overflow-wrap:anywhere}
+.tbl tr.top10 td.pos{color:var(--mint-dark);font-weight:600}
+.wrap{overflow-x:auto;border-radius:12px}
+
+.chart{position:relative;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 16px 8px;margin:0 0 20px}
+.chart-t{font:600 12px var(--label);color:var(--muted);margin:0 0 6px}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart .grid{stroke:var(--line);stroke-width:1}
+.chart .axis{fill:var(--faint);font:500 10.5px var(--label)}
+.chart .area{fill:var(--mint-wash)}
+.chart .ln{fill:none;stroke:var(--mint-dark);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.chart .dot{fill:var(--mint-dark);stroke:var(--card);stroke-width:2}
+.chart .cross{stroke:var(--faint);stroke-width:1;stroke-dasharray:3 3}
+.chart .end{fill:var(--ink);font:600 11px var(--label)}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:#fff;font:500 12px/1.4 var(--label);padding:6px 9px;border-radius:8px;white-space:nowrap;transform:translate(-50%,-100%);opacity:0;transition:opacity .1s}
+.tip b{font-weight:700}
+
+.note{background:var(--amber-wash);border:1px solid #f1dcb4;border-radius:12px;padding:14px 16px;color:var(--amber-dark);font-size:14px;margin:20px 0 0}
+.note b{color:var(--ink);font-weight:600}
+
+.counts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:0 0 20px}
+.count{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.count b{font-size:22px;font-weight:500}
+.count p{margin:4px 0 0;color:var(--muted);font-size:13.5px;line-height:1.55}
+@media(max-width:600px){.counts{grid-template-columns:1fr}}
+
+footer{max-width:var(--col);margin:0 auto;padding-block:24px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));color:var(--faint);font-size:13px;border-top:1px solid var(--line)}
+footer a{color:var(--muted)}
+</style>
+
+<header class="top"><div class="top-in"><a class="brand" href="#top">FlyRank</a>
+<nav class="nav" aria-label="Sections"><a href="#trend">Trend</a><a href="#queries">Queries</a><a href="#pages">Pages</a><a href="#ai">AI</a><a href="#products">Products</a><a href="#next">Next steps</a></nav>
+</div></header>
+
+<main id="top">
+<p class="eyebrow">Otherway Health · Organic search · First month</p>
+<h1>Otherway organic search, first month</h1>
+<p class="lede">Content started going live on Oct 13. Google Search Console shows data from Oct 15 to Nov 16. Daily impressions grew about 10× in that time, and Google is already showing the site in AI answers. Clicks are still low, which is normal this early.</p>
+
+<div class="stats">
+<div class="stat"><b>5,580</b><span>Impressions</span></div>
+<div class="stat"><b>37</b><span>Clicks</span></div>
+<div class="stat"><b>414</b><span>AI feature impressions</span></div>
+<div class="stat"><b>753</b><span>Queries ranking</span></div>
+</div>
+
+<section id="trend">
+<p class="eyebrow">01 / Trend</p>
+<div class="head"><h2>Daily impressions are climbing</h2><span class="badge">Growing</span></div>
+<p class="sub">From about 26 a day in the first week to 271 a day in the last week</p>
+<div class="chart" id="c-imp"><p class="chart-t">Impressions per day, web search</p></div>
+
+<div class="wrap"><table class="tbl">
+<thead><tr><th>Week</th><th class="n">Impressions</th><th class="n">Per day</th><th class="n">Clicks</th></tr></thead>
+<tbody>
+<tr><td>Oct 15–19 (5 days)</td><td class="n">129</td><td class="n">26</td><td class="n">4</td></tr>
+<tr><td>Oct 20–26</td><td class="n">516</td><td class="n">74</td><td class="n">12</td></tr>
+<tr><td>Oct 27–Nov 2</td><td class="n">1,519</td><td class="n">217</td><td class="n">3</td></tr>
+<tr><td>Nov 3–9</td><td class="n">1,516</td><td class="n">217</td><td class="n">8</td></tr>
+<tr><td>Nov 10–16</td><td class="n">1,900</td><td class="n">271</td><td class="n">10</td></tr>
+</tbody>
+</table></div>
+
+<h3>Clicks will follow impressions</h3>
+<ul class="list">
+<li><b>Impressions come first.</b> Google is testing the new pages for many queries (753 so far). Average position is 24.5, which is mostly page 2 and 3 of results, where few people click.</li>
+<li><b>Clicks start as pages reach page 1.</b> Six blog pages already average a top-10 position: rosuvastatin and magnesium, folinic acid 25 mg, cyanocobalamin 1000 mcg, folate DFE, L-serine vs phosphatidylserine and homocysteine urine test. These are the first likely sources of steady clicks.</li>
+<li><b>Most clicks today are brand searches.</b> 18 of 37 clicks went to the homepage, mostly from "otherway health" and "otherway".</li>
+</ul>
+
+<div class="note"><b>Too early for firm conclusions.</b> One month is a short window for SEO. New content usually needs 3–6 months to settle into stable rankings. The numbers so far show the right direction: Google is indexing the content and showing it for more searches every week.</div>
+</section>
+
+<section id="queries">
+<p class="eyebrow">02 / Queries</p>
+<div class="head"><h2>Top 20 queries</h2></div>
+<p class="sub">Sorted by impressions, Oct 15 – Nov 16. Position is the average rank in Google.</p>
+<div class="wrap"><table class="tbl">
+<thead><tr><th>Query</th><th class="n">Impressions</th><th class="n">Clicks</th><th class="n">Position</th></tr></thead>
+<tbody id="q-rows"></tbody>
+</table></div>
+</section>
+
+<section id="pages">
+<p class="eyebrow">03 / Pages</p>
+<div class="head"><h2>Top 20 pages</h2></div>
+<p class="sub">Sorted by impressions. 83 pages have appeared in search so far. Green positions are already in the top 10.</p>
+<div class="wrap"><table class="tbl">
+<thead><tr><th>Page</th><th class="n">Impressions</th><th class="n">Clicks</th><th class="n">Position</th></tr></thead>
+<tbody id="p-rows"></tbody>
+</table></div>
+</section>
+
+<section id="ai">
+<p class="eyebrow">04 / Generative AI</p>
+<div class="head"><h2>Showing up in AI answers</h2><span class="badge">Growing</span></div>
+<p class="sub">Impressions in Google's AI features (AI Overviews and AI Mode) went from about 2 a day to 23 a day</p>
+<div class="chart" id="c-ai"><p class="chart-t">AI feature impressions per day</p></div>
+
+<div class="counts">
+<div class="count"><b>414</b><p>AI feature impressions in the first month</p></div>
+<div class="count"><b>44</b><p>Pages Google has used in AI answers</p></div>
+</div>
+
+<h3>Top 20 pages in AI features</h3>
+<div class="wrap"><table class="tbl">
+<thead><tr><th>Page</th><th class="n">AI impressions</th></tr></thead>
+<tbody id="ai-rows"></tbody>
+</table></div>
+</section>
+
+<section id="products">
+<p class="eyebrow">05 / Products</p>
+<div class="head"><h2>Product snippet warnings</h2><span class="badge next">FlyRank can fix</span></div>
+<p class="sub">All 4 product pages are valid. The warnings are missing optional fields. Adding them lets Google show more product details in search, such as stars, returns and shipping.</p>
+
+<div class="wrap"><table class="tbl">
+<thead><tr><th>Missing field</th><th>What it means</th><th class="n">Items</th></tr></thead>
+<tbody>
+<tr><td><code>aggregateRating</code></td><td>The average star rating and review count. Shows stars under the product in search.</td><td class="n">2</td></tr>
+<tr><td><code>review</code></td><td>Individual customer reviews in the product's structured data.</td><td class="n">2</td></tr>
+<tr><td><code>hasMerchantReturnPolicy</code></td><td>The return policy, such as the return window and who pays return shipping.</td><td class="n">4</td></tr>
+<tr><td><code>shippingDetails</code></td><td>Shipping cost and delivery time.</td><td class="n">4</td></tr>
+<tr><td><code>description</code></td><td>A short product description in the structured data.</td><td class="n">3</td></tr>
+</tbody>
+</table></div>
+<p class="sub" style="margin-top:12px">Rating and review warnings affect Calm &amp; Collected Duo (methylation-bundle) and Methyl Balance. Return, shipping and description warnings come from the Merchant listings report.</p>
+
+<h3>How FlyRank fixes it</h3>
+<ul class="list">
+<li><b>Add return policy and shipping details</b> to the product structured data, using the store's existing shipping and refund policies.</li>
+<li><b>Add product descriptions</b> to the 3 products missing them.</li>
+<li><b>Connect real reviews</b> to the product markup once products have customer reviews. Google only allows ratings from real customers.</li>
+<li><b>Validate the fix</b> in Search Console so Google rechecks the pages.</li>
+</ul>
+</section>
+
+<section id="next">
+<p class="eyebrow">06 / Next steps</p>
+<div class="head"><h2>What happens next</h2></div>
+<p class="sub">For the next 1–2 months</p>
+<ul class="list todo">
+<li><b>Keep publishing</b> on the topics already gaining impressions: methylation, TMG, B12 forms, magnesium and focus supplements.</li>
+<li><b>Fix the product structured data</b> listed above.</li>
+<li><b>Review again in mid-December</b> to compare month two with month one.</li>
+</ul>
+</section>
+</main>
+<footer>FlyRank · Otherway Health organic search · November 2026</footer>
+<script>
+(function(){
+var start=new Date(2026,9,15);
+var imp=[39,28,18,21,23,42,49,70,55,52,99,149,167,239,191,231,227,213,251,234,224,239,215,211,200,193,200,203,232,318,361,303,283];
+var ai=[3,3,2,3,0,4,8,6,5,1,12,9,11,23,8,8,6,12,21,6,22,17,20,17,11,17,12,28,27,25,23,27,17];
+var M=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function lab(i){var d=new Date(start);d.setDate(d.getDate()+i);return M[d.getMonth()]+' '+d.getDate()}
+var NS='http://www.w3.org/2000/svg';
+function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+function chart(id,data,ymax,step,unit){
+ var box=document.getElementById(id),W=720,H=220,L=36,R=12,T=10,B=26,pw=W-L-R,ph=H-T-B;
+ var svg=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':box.querySelector('.chart-t').textContent},box);
+ var x=function(i){return L+i*pw/(data.length-1)},y=function(v){return T+ph-v/ymax*ph};
+ for(var v=0;v<=ymax;v+=step){el('line',{class:'grid',x1:L,x2:W-R,y1:y(v),y2:y(v)},svg);el('text',{class:'axis',x:L-8,y:y(v)+3.5,'text-anchor':'end'},svg).textContent=v}
+ [0,7,14,21,28,32].forEach(function(i){el('text',{class:'axis',x:x(i),y:H-6,'text-anchor':i===0?'start':i===32?'end':'middle'},svg).textContent=lab(i)});
+ var d=data.map(function(v,i){return (i?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1)}).join(' ');
+ el('path',{class:'area',d:d+' L'+x(data.length-1)+' '+y(0)+' L'+x(0)+' '+y(0)+' Z'},svg);
+ el('path',{class:'ln',d:d},svg);
+ var li=data.length-1;el('circle',{class:'dot',cx:x(li),cy:y(data[li]),r:4},svg);
+ var cross=el('line',{class:'cross',y1:T,y2:T+ph,opacity:0},svg),hd=el('circle',{class:'dot',r:4.5,opacity:0},svg);
+ var tip=document.createElement('div');tip.className='tip';box.appendChild(tip);
+ var hit=el('rect',{x:L,y:T,width:pw,height:ph,fill:'transparent'},svg);
+ function mv(ev){var r=svg.getBoundingClientRect(),px=(ev.clientX-r.left)*W/r.width,i=Math.max(0,Math.min(li,Math.round((px-L)/pw*li)));
+  cross.setAttribute('x1',x(i));cross.setAttribute('x2',x(i));cross.setAttribute('opacity',1);hd.setAttribute('cx',x(i));hd.setAttribute('cy',y(data[i]));hd.setAttribute('opacity',1);
+  var s=r.width/W,br=box.getBoundingClientRect();tip.innerHTML=lab(i)+' · <b>'+data[i]+'</b> '+unit;tip.style.left=Math.max(60,Math.min(br.width-60,(r.left-br.left)+x(i)*s))+'px';tip.style.top=((r.top-br.top)+y(data[i])*s-10)+'px';tip.style.opacity=1}
+ function out(){cross.setAttribute('opacity',0);hd.setAttribute('opacity',0);tip.style.opacity=0}
+ hit.addEventListener('pointermove',mv);hit.addEventListener('pointerleave',out);
+}
+chart('c-imp',imp,400,100,'impressions');
+chart('c-ai',ai,30,10,'AI impressions');
+
+var q=[["methylate",140,0,83.0],["otherway",117,2,10.6],["methylation support supplements",58,0,32.6],["methylated vitamins",55,0,39.0],["methylation support",43,0,75.9],["magnesium oxide for sleep",38,0,31.6],["drift botanicals pills",34,0,7.0],["what are methylated vitamins",32,0,68.5],["methylation formula",31,0,27.0],["methylation support supplement",30,0,40.4],["tmg blood pressure",30,0,47.7],["trimethylglycine",29,0,19.0],["tmg supplement",29,0,43.0],["what is tmg",27,0,45.4],["methylation supplements",23,0,34.6],["ginseng supplements for energy",22,0,15.7],["tmg benefits",22,0,57.2],["magnesium chloride use",22,0,68.4],["compare pricing for different methylation support supplements for mthfr which ones are most affordable",21,0,7.4],["magnesium chloride uses",21,0,70.1]];
+var p=[["/blogs/sleep-recovery/rosuvastatin-interactions-with-magnesium",706,2,8.0],["/blogs/nutrient-forms/folinic-acid-25mg-uses-dosing-and-folate-forms",446,0,8.9],["/blogs/methylation/difference-between-b12-and-methyl-b12",413,1,20.7],["/blogs/methylation/trimethylglycine-benefits-and-how-tmg-works",315,0,43.1],["/blogs/methylation/best-methylation-supplements-and-how-to-choose",308,0,28.6],["/blogs/methylation/what-is-methylated-vitamin-forms-explained",284,0,47.8],["/",211,18,5.1],["/blogs/nutrient-forms/cyanocobalamin-1000-mg-or-1000-mcg",211,1,6.3],["/blogs/nutrient-forms/what-does-folate-dfe-mean-a-clear-label-guide",197,0,8.8],["/blogs/sleep-recovery/magnesium-oxide-for-sleep-is-it-a-good-choice",150,0,36.5],["/blogs/methylation/whatismethylation",143,0,73.6],["/blogs/mental-clarity/beef-organ-supplements-for-energy-what-to-know-before-buying",136,0,41.7],["/blogs/mental-clarity/l-serine-vs-phosphatidylserine-what-s-the-difference",133,1,5.8],["/blogs/mental-clarity/ginseng-supplements-for-energy-benefits-and-choices",128,0,21.0],["/blogs/mental-clarity/best-focus-supplements-how-to-choose-for-energy-memory-and-concentration",121,0,30.2],["/products/mag-drift",119,2,8.5],["/blogs/sleep-recovery/magnesium-chloride-for-sleep-what-to-know",103,1,53.5],["/blogs/sleep-recovery/magnesium-taurate-arrhythmia-evidence-and-safety",99,1,20.9],["/blogs/methylation/does-trimethylglycine-lower-blood-pressure",98,1,28.3],["/blogs/mental-clarity/alpha-gpc-for-focus-what-to-know-before-choosing-a-supplement",97,0,21.8]];
+var a=[["/blogs/sleep-recovery/rosuvastatin-interactions-with-magnesium",101],["/",46],["/blogs/mental-clarity/l-serine-vs-phosphatidylserine-what-s-the-difference",39],["/blogs/nutrient-forms/cyanocobalamin-1000-mg-or-1000-mcg",25],["/blogs/mental-clarity/phosphatidylserine-side-effects-what-to-know-before-taking-it",24],["/blogs/methylation/difference-between-b12-and-methyl-b12",23],["/products/mag-drift",17],["/blogs/sleep-recovery/magnesium-taurate-arrhythmia-evidence-and-safety",15],["/blogs/mental-clarity/phosphatidylserine-vs-ashwagandha-how-do-they-compare",13],["/blogs/mental-clarity/alpha-gpc-for-focus-what-to-know-before-choosing-a-supplement",12],["/blogs/methylation/homocysteine-urine-test-uses-and-results",12],["/blogs/methylation/methylation-cofactors-and-how-they-work",12],["/blogs/nutrient-forms/what-does-folate-dfe-mean-a-clear-label-guide",11],["/products/methyl-rise",10],["/blogs/methylation/does-trimethylglycine-lower-blood-pressure",7],["/blogs/methylation/methylation-sensitivity-in-dna-and-supplements",6],["/blogs/methylation/trimethylglycine-benefits-and-how-tmg-works",5],["/collections/all",5],["/blogs/methylation/what-is-methylated-vitamin-forms-explained",4],["/pages/about",4]];
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function link(u){var t=u==='/'?'Homepage':u.replace(/^\/blogs\/[^/]+\//,'').replace(/^\//,'');return '<a href="https://www.otherway.health'+u+'" target="_blank" rel="noopener">'+esc(t)+'</a>'}
+function f(n){return n.toLocaleString('en-US')}
+document.getElementById('q-rows').innerHTML=q.map(function(r){return '<tr><td class="q">'+esc(r[0])+'</td><td class="n">'+r[1]+'</td><td class="n">'+r[2]+'</td><td class="n">'+r[3].toFixed(1)+'</td></tr>'}).join('');
+document.getElementById('p-rows').innerHTML=p.map(function(r){return '<tr'+(r[3]<=10?' class="top10"':'')+'><td>'+link(r[0])+'</td><td class="n">'+f(r[1])+'</td><td class="n">'+r[2]+'</td><td class="n pos">'+r[3].toFixed(1)+'</td></tr>'}).join('');
+document.getElementById('ai-rows').innerHTML=a.map(function(r){return '<tr><td>'+link(r[0])+'</td><td class="n">'+r[1]+'</td></tr>'}).join('');
+
+var links=[].slice.call(document.querySelectorAll('.nav a'));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+function set(i){links.forEach(function(a,j){var on=j===i;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}
+function spy(){var y=120,cur=-1;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<=y)cur=i});
+if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2)cur=secs.length-1;set(cur)}
+window.addEventListener('scroll',spy,{passive:true});window.addEventListener('resize',spy);spy();
+})();
+</script>
+
+</body></html>
