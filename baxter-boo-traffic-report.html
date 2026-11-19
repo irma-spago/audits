@@ -1,0 +1,279 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Baxter Boo Traffic Review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: single 760px column, fixed dark top bar with section nav, stat tiles, then numbered sections (FlyRank report style, light only) */
+:root{--mint:#54e399;--mint-light:#7eefc1;--mint-dark:#1a7a4a;--mint-wash:#e3f7ec;--amber:#e8a13a;--amber-wash:#fbf0dd;--amber-dark:#8a5a12;--ink:#051f21;--bar:#051f21;--bar-text:#c4d2cd;--paper:#f6f9f8;--card:#fff;--sunken:#edf2f0;--line:#dfe6e4;--muted:#56696a;--faint:#7b8d8c;--step-bg:#051f21;--step-fg:#fff;
+--sans:Geist,"Helvetica Neue",Arial,sans-serif;--label:Manrope,Arial,sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,monospace;--col:760px}
+:root{color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.7 var(--sans)}
+a{color:inherit;text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--mint-dark);outline-offset:3px;border-radius:4px}
+code{font-family:var(--mono);font-size:.84em;background:var(--sunken);border:1px solid var(--line);border-radius:5px;padding:1px 6px;overflow-wrap:anywhere}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bar)}
+.top{position:fixed;top:0;left:0;right:0;padding-top:env(safe-area-inset-top,0px);z-index:20;background:var(--bar);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.top-in{max-width:calc(var(--col) + 32px);margin:auto;height:64px;display:flex;align-items:center;gap:var(--g,32px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.brand{font-weight:700;font-size:20px;letter-spacing:-.04em;text-decoration:none;flex:0 0 auto;color:#fff}
+.nav{display:flex;justify-content:flex-end;margin-left:auto;gap:2px;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1 1 0%}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;font-size:13px;color:var(--bar-text);text-decoration:none;padding:7px 11px;border-radius:999px;transition:background .15s,color .15s}
+.nav a:hover,.nav a.active{background:rgba(84,227,153,.12);color:var(--mint-light)}
+@media(max-width:860px){.top-in{--g:16px}.nav{justify-content:flex-start}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.nav a{transition:none}}
+
+main{max-width:calc(var(--col) + 32px);margin:0 auto;padding-top:calc(64px + 56px + env(safe-area-inset-top,0px));padding-bottom:80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font:600 10.5px var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 6px}
+h1{font-size:34px;line-height:1.15;letter-spacing:-.025em;font-weight:500;margin:0 0 12px;text-wrap:balance}
+.lede{color:var(--muted);font-size:16px;margin:0 0 28px;max-width:620px}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 8px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-size:26px;font-weight:500;letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
+.stat span{font:500 12px var(--label);color:var(--muted)}
+@media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}h1{font-size:28px}}
+
+section{padding:48px 0 8px;border-top:1px solid var(--line);margin-top:48px}
+.head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 4px}
+h2{font-size:24px;line-height:1.25;letter-spacing:-.02em;font-weight:500;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 20px}
+h3{font-size:16px;font-weight:500;margin:28px 0 8px}
+.badge{font:700 9.5px var(--label);letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--mint-wash);color:var(--mint-dark)}
+.badge.next{background:var(--amber-wash);color:var(--amber-dark)}
+
+ul.list{list-style:none;padding:0;margin:0}
+ul.list li{position:relative;padding:10px 0 10px 20px;border-bottom:1px solid var(--line)}
+ul.list li:last-child{border-bottom:0}
+ul.list li::before{content:"";position:absolute;left:2px;top:19px;width:7px;height:7px;border-radius:50%;background:var(--mint)}
+ul.list.todo li::before{background:var(--amber)}
+ul.list b{font-weight:600}
+
+.tbl{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
+.tbl th,.tbl td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.tbl th{font:600 10.5px var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--faint);background:var(--sunken);white-space:nowrap}
+.tbl a{font-weight:500;color:var(--mint-dark);overflow-wrap:anywhere}
+.tbl td.n,.tbl th.n{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.tbl td.q{overflow-wrap:anywhere}
+.tbl tr.top10 td.pos{color:var(--mint-dark);font-weight:600}
+.wrap{overflow-x:auto;border-radius:12px}
+
+.chart{position:relative;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 16px 8px;margin:0 0 20px}
+.chart-t{font:600 12px var(--label);color:var(--muted);margin:0 0 6px}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart .grid{stroke:var(--line);stroke-width:1}
+.chart .axis{fill:var(--faint);font:500 10.5px var(--label)}
+.chart .area{fill:var(--mint-wash)}
+.chart .ln{fill:none;stroke:var(--mint-dark);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.chart .dot{fill:var(--mint-dark);stroke:var(--card);stroke-width:2}
+.chart .cross{stroke:var(--faint);stroke-width:1;stroke-dasharray:3 3}
+.chart .end{fill:var(--ink);font:600 11px var(--label)}
+.chart .mark{stroke:var(--amber);stroke-width:1.5;stroke-dasharray:4 3}
+.chart .mark-t{fill:var(--amber-dark);font:600 10.5px var(--label)}
+.tbl td.up{color:var(--mint-dark);font-weight:600}
+.tbl td.down{color:#a2412b}
+.tbl td.down{color:#a2412b;font-weight:600}
+.multi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 20px}
+.multi .chart{margin:0;padding:12px 12px 6px}
+.multi .big{font-size:20px;font-weight:500;margin:0 0 2px;font-variant-numeric:tabular-nums}
+@media(max-width:700px){.multi{grid-template-columns:1fr}}
+.seg{font:600 10px var(--label);letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:#fff;font:500 12px/1.4 var(--label);padding:6px 9px;border-radius:8px;white-space:nowrap;transform:translate(-50%,-100%);opacity:0;transition:opacity .1s}
+.tip b{font-weight:700}
+
+.note{background:var(--amber-wash);border:1px solid #f1dcb4;border-radius:12px;padding:14px 16px;color:var(--amber-dark);font-size:14px;margin:20px 0 0}
+.note b{color:var(--ink);font-weight:600}
+
+.counts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:0 0 20px}
+.count{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.count b{font-size:22px;font-weight:500}
+.count p{margin:4px 0 0;color:var(--muted);font-size:13.5px;line-height:1.55}
+@media(max-width:600px){.counts{grid-template-columns:1fr}}
+
+footer{max-width:var(--col);margin:0 auto;padding-block:24px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));color:var(--faint);font-size:13px;border-top:1px solid var(--line)}
+footer a{color:var(--muted)}
+</style>
+<header class="top"><div class="top-in"><a class="brand" href="#top">FlyRank</a>
+<nav class="nav" aria-label="Sections"><a href="#overview">Overview</a><a href="#blog">Blog</a><a href="#categories">Categories</a><a href="#products">Products</a><a href="#ai">AI</a><a href="#recovery">Recovery</a></nav>
+</div></header>
+
+<main id="top">
+<p class="eyebrow">Baxter Boo · Organic search · Year over year</p>
+<h1>Where Baxter Boo's organic traffic changed</h1>
+<p class="lede">The blog has grown strongly since content publishing started on Jun 19. Year over year, blog clicks are up 289%. The decline comes from category pages (<code>/l.cfm</code>) and product pages (<code>/p.cfm</code>), which are each down 48%. These are the pages the audit covers.</p>
+
+<div class="stats">
+<div class="stat"><b>+289%</b><span>Blog clicks YoY</span></div>
+<div class="stat"><b>−48%</b><span>Category page clicks YoY</span></div>
+<div class="stat"><b>−48%</b><span>Product page clicks YoY</span></div>
+<div class="stat"><b>3.1×</b><span>AI feature impressions</span></div>
+</div>
+
+<section id="overview">
+<p class="eyebrow">01 / Overview</p>
+<div class="head"><h2>Search results, year over year</h2></div>
+<p class="sub">Jul 18 – Nov 17, 2026 vs the same dates in 2025. Search Console keeps 16 months of data, so this is the longest matching window available.</p>
+<div class="wrap"><table class="tbl">
+<thead><tr><th>Section</th><th class="n">Clicks 2025</th><th class="n">Clicks 2026</th><th class="n">Change</th><th class="n">Impr. 2025</th><th class="n">Impr. 2026</th><th class="n">Change</th></tr></thead>
+<tbody>
+<tr><td>Blog <code>/blog/a.cfm</code></td><td class="n">3,632</td><td class="n">14,146</td><td class="n up">+289%</td><td class="n">1.05M</td><td class="n">3.76M</td><td class="n up">+257%</td></tr>
+<tr><td>Categories <code>/l.cfm</code></td><td class="n">19,302</td><td class="n">9,986</td><td class="n down">−48%</td><td class="n">5.64M</td><td class="n">1.98M</td><td class="n down">−65%</td></tr>
+<tr><td>Products <code>/p.cfm</code></td><td class="n">13,914</td><td class="n">7,239</td><td class="n down">−48%</td><td class="n">4.21M</td><td class="n">2.25M</td><td class="n down">−46%</td></tr>
+<tr><td><b>Whole site</b></td><td class="n">39,799</td><td class="n">33,085</td><td class="n down">−17%</td><td class="n">11.38M</td><td class="n">7.68M</td><td class="n down">−32%</td></tr>
+</tbody>
+</table></div>
+
+<h3>Monthly clicks by section</h3>
+<p class="sub">Aug 2025 – Oct 2026. Dashed line marks Jun 19, when content publishing started.</p>
+<div class="multi">
+<div class="chart" id="m-blog"><p class="seg">Blog</p></div>
+<div class="chart" id="m-l"><p class="seg">Categories</p></div>
+<div class="chart" id="m-p"><p class="seg">Products</p></div>
+</div>
+
+<ul class="list">
+<li><b>The blog now brings 43% of all clicks</b>, up from 9% a year ago. 540 blog posts got clicks in this period, compared with 82 last year.</li>
+<li><b>Category and product pages are where traffic was lost.</b> Together they lost about 16,000 clicks year over year. The blog gained about 10,500.</li>
+<li><b>The whole site dropped in late May and early June</b>, during <a href="https://www.seroundtable.com/google-may-2026-core-update-done-41435.html" target="_blank" rel="noopener">Google's May 2026 core update</a>. Daily clicks fell from about 220 to under 100. Traffic started climbing again from Jun 21, right after content publishing began.</li>
+</ul>
+</section>
+
+<section id="blog">
+<p class="eyebrow">02 / Blog</p>
+<div class="head"><h2>Blog: top 20 pages by clicks</h2><span class="badge">Growing</span></div>
+<p class="sub">Jul 18 – Nov 17, 2026 vs 2025. Most of these posts did not exist a year ago.</p>
+<div class="wrap"><table class="tbl">
+<thead><tr><th>Page</th><th class="n">Clicks 2025</th><th class="n">Clicks 2026</th><th class="n">Impr. 2026</th></tr></thead>
+<tbody id="t-blog"></tbody>
+</table></div>
+</section>
+
+<section id="categories">
+<p class="eyebrow">03 / Categories</p>
+<div class="head"><h2>Category pages: top 20 by clicks</h2><span class="badge next">Needs optimization</span></div>
+<p class="sub">Jul 18 – Nov 17, 2026 vs 2025. Clicks down 48%, impressions down 65%.</p>
+<div class="wrap"><table class="tbl">
+<thead><tr><th>Page</th><th class="n">Clicks 2025</th><th class="n">Clicks 2026</th><th class="n">Impr. 2025</th><th class="n">Impr. 2026</th></tr></thead>
+<tbody id="t-l"></tbody>
+</table></div>
+<h3>Biggest losses</h3>
+<div class="wrap"><table class="tbl">
+<thead><tr><th>Page</th><th class="n">Clicks 2025</th><th class="n">Clicks 2026</th><th class="n">Lost</th></tr></thead>
+<tbody id="t-ll"></tbody>
+</table></div>
+<div class="note"><b>430 category pages lost all visibility.</b> They brought 2,252 clicks last year and have no impressions this year. These are likely removed, redirected or empty categories, and should be checked against the audit.</div>
+</section>
+
+<section id="products">
+<p class="eyebrow">04 / Products</p>
+<div class="head"><h2>Product pages: top 20 by clicks</h2><span class="badge next">Needs optimization</span></div>
+<p class="sub">Jul 18 – Nov 17, 2026 vs 2025. Clicks down 48%, impressions down 46%.</p>
+<div class="wrap"><table class="tbl">
+<thead><tr><th>Page</th><th class="n">Clicks 2025</th><th class="n">Clicks 2026</th><th class="n">Impr. 2025</th><th class="n">Impr. 2026</th></tr></thead>
+<tbody id="t-p"></tbody>
+</table></div>
+<h3>Biggest losses</h3>
+<div class="wrap"><table class="tbl">
+<thead><tr><th>Page</th><th class="n">Clicks 2025</th><th class="n">Clicks 2026</th><th class="n">Lost</th></tr></thead>
+<tbody id="t-pl"></tbody>
+</table></div>
+<div class="note"><b>410 product pages lost all visibility.</b> They brought 3,237 clicks last year, about half of the product page decline. Many are likely discontinued or out-of-stock products, which should redirect to the closest category or replacement product.</div>
+</section>
+
+<section id="ai">
+<p class="eyebrow">05 / Generative AI</p>
+<div class="head"><h2>AI features: impressions tripled</h2><span class="badge">Growing</span></div>
+<p class="sub">Search Console has AI feature data from May 18, 2026, so there's no year-over-year view. This compares May 18 – Jun 18 (before publishing) with Oct 17 – Nov 17 (32 days each).</p>
+<div class="chart" id="c-ai"><p class="chart-t">AI feature impressions per week, whole site</p></div>
+<div class="wrap"><table class="tbl">
+<thead><tr><th>Section</th><th class="n">Per day before</th><th class="n">Per day now</th><th class="n">Change</th></tr></thead>
+<tbody>
+<tr><td>Blog</td><td class="n">1,836</td><td class="n">5,643</td><td class="n up">3.1×</td></tr>
+<tr><td>Categories</td><td class="n">190</td><td class="n">557</td><td class="n up">2.9×</td></tr>
+<tr><td>Products</td><td class="n">440</td><td class="n">1,408</td><td class="n up">3.2×</td></tr>
+<tr><td><b>Whole site</b></td><td class="n">2,482</td><td class="n">7,624</td><td class="n up">3.1×</td></tr>
+</tbody>
+</table></div>
+<p class="sub" style="margin-top:12px">The blog brings 81% of all AI feature impressions since Jun 19.</p>
+
+<h3>Blog: top 20 pages by AI impressions</h3>
+<div class="wrap"><table class="tbl"><thead><tr><th>Page</th><th class="n">Before</th><th class="n">Now</th></tr></thead><tbody id="a-blog"></tbody></table></div>
+<h3>Categories: top 20 pages by AI impressions</h3>
+<div class="wrap"><table class="tbl"><thead><tr><th>Page</th><th class="n">Before</th><th class="n">Now</th></tr></thead><tbody id="a-l"></tbody></table></div>
+<h3>Products: top 20 pages by AI impressions</h3>
+<div class="wrap"><table class="tbl"><thead><tr><th>Page</th><th class="n">Before</th><th class="n">Now</th></tr></thead><tbody id="a-p"></tbody></table></div>
+</section>
+
+<section id="recovery">
+<p class="eyebrow">06 / Recovery</p>
+<div class="head"><h2>What drives the recovery</h2></div>
+<p class="sub">The blog has already made up about two-thirds of the clicks lost on category and product pages. Full recovery depends on those pages.</p>
+<ul class="list todo">
+<li><b>Implement the audit on category and product pages.</b> These sections lost about 16,000 clicks year over year and are the main reason total traffic is down.</li>
+<li><b>Fix the 840 pages that lost all visibility.</b> Redirect removed categories and discontinued products to the closest live page.</li>
+<li><b>Keep publishing blog content.</b> It has grown every month since Jun 19 and leads the site in AI features.</li>
+<li><b>Review progress monthly</b> using the same year-over-year windows.</li>
+</ul>
+</section>
+</main>
+<footer>FlyRank · Baxter Boo traffic review · November 2026</footer>
+<script>
+(function(){
+var DATA={"D": {"BLOGTOP": [["10-dog-breeds-prone-to-bloat-gdv/", 1418, 0, 50315, 0], ["what-dry-dog-food-is-best-for-picky-eaters-a-practical-guide/", 625, 0, 95792, 0], ["can-dogs-eat-string-cheese/", 466, 148, 85000, 53084], ["pros-cons-catnip-understanding-its-effects-on-cats/", 381, 425, 55938, 56308], ["how-much-wet-dog-food-equals-1-cup-dry-a-simple-conversion-guide/", 318, 0, 36813, 0], ["is-purina-pro-plan-a-good-dog-food/", 272, 1045, 88965, 186997], ["5-best-dog-treats-for-training-low-calorie-high-rewards/", 234, 39, 31311, 11660], ["the-ultimate-guide-to-no-pull-dog-harnesses-for-a-smoother-walk/", 234, 0, 22503, 0], ["top-5-pet-food-brands-you-should-know-carna4-dr-martys-open-farm-verus-and-redpaw/", 229, 407, 23267, 25636], ["spotting-and-treating-dog-leg-infections-everything-you-need-to-know/", 228, 0, 28974, 0], ["help-your-cat-eat-top-appetite-stimulants-for-felines/", 216, 0, 35253, 0], ["how-much-should-a-black-lab-weigh/", 213, 0, 62057, 0], ["how-much-wet-dog-food-is-equivalent-to-dry/", 209, 0, 31478, 0], ["can-you-soak-dry-dog-food-overnight-safety-and-tips/", 209, 0, 13082, 0], ["top-10-calming-dog-toys-from-heartbeats-to-happy-chews/", 207, 0, 21207, 0], ["is-it-ok-to-soak-dry-dog-food-in-water-a-practical-guide/", 205, 0, 23719, 0], ["the-purr-fect-choice-hydrolyzed-protein-cat-food-options/", 167, 0, 48310, 0], ["hungry-hounds-finding-the-right-otc-appetite-booster-for-your-dog/", 165, 0, 31983, 0], ["keeping-kitty-cozy-a-guide-to-cat-sweaters-and-their-safety/", 161, 0, 20457, 0], ["how-many-grams-in-a-cup-of-dry-dog-food-a-feeding-guide/", 156, 0, 43789, 0]], "LTOP": [["dog-costumes_dog-halloween-costumes/", 1927, 2543, 316605, 637931], ["dog-costumes_dog-halloween-costumes/giant-breeds/", 877, 445, 65555, 38898], ["dog-costumes_dog-halloween-costumes_walking-dog-costumes/", 497, 445, 36613, 31012], ["dog-clothes/", 234, 643, 46789, 289108], ["dog-costumes/harry-potter/", 224, 94, 16274, 10851], ["dog-costumes_holiday-dog-costumes/", 177, 257, 39960, 56161], ["dog-clothes_dog-snowsuits/", 163, 309, 24580, 42203], ["dog-costumes_dog-halloween-costumes_superhero-dog-costumes/", 162, 422, 18349, 86126], ["dog-costumes_halloween-dog-clothes/", 132, 204, 20514, 25259], ["dog-costumes_dog-halloween-costumes_career-dog-costumes/", 129, 286, 16252, 44380], ["dog-costumes_dog-halloween-costumes_food-frenzy-dog-costumes/", 116, 355, 12487, 48334], ["_/quick-tag/", 109, 58, 5821, 6514], ["dog-clothes_dog-jerseys/", 107, 289, 16875, 37014], ["_/carna4/", 86, 133, 21675, 34447], ["dog-clothes_funny-dog-shirts/", 84, 209, 12880, 29460], ["dog-clothes_dog-hoodies/", 80, 141, 39535, 63215], ["_/rubies-costumes/", 77, 213, 6582, 14251], ["dog-toys_noise-making-toys/", 76, 185, 4245, 9423], ["dog-clothes_dog-dresses/", 74, 749, 26486, 87202], ["dog-costumes_dog-halloween-costumes_sports-dog-costumes/", 66, 84, 7038, 9209]], "LLOSERS": [["dog-clothes_dog-dresses/", 74, 749, 26486, 87202], ["dog-costumes_dog-halloween-costumes/", 1927, 2543, 316605, 637931], ["dog-clothes/", 234, 643, 46789, 289108], ["dog-clothes_dog-sweaters/", 18, 285, 14383, 107782], ["dog-costumes_dog-halloween-costumes_superhero-dog-costumes/", 162, 422, 18349, 86126], ["dog-costumes_dog-halloween-costumes_food-frenzy-dog-costumes/", 116, 355, 12487, 48334], ["dog-clothes_dog-jumpsuits/", 33, 232, 3129, 18443], ["dog-clothes_dog-shirts/", 31, 224, 10989, 26552], ["dog-clothes_dog-jerseys/", 107, 289, 16875, 37014], ["dog-wedding-clothes/", 0, 182, 0, 26602]], "PTOP": [["zack-zoey-scorpion-halloween-dog-costume-black/", 166, 44, 6454, 2451], ["kurgo-step-n-strobe-dog-shoes/", 90, 76, 9729, 5634], ["rubies-head-onplatter-dog-costume/", 69, 14, 7004, 1379], ["k9-sport-sack-kolossus-big-dog-backpack-black/", 39, 101, 75881, 110813], ["power-ranger-dog-costume-pink/", 39, 18, 3732, 3845], ["kong-bitenot-dog-collar/", 35, 50, 5028, 8859], ["eddie-bauer-peak-performance-dog-jacket-navy/", 30, 6, 3472, 458], ["ghostbusters-slimer-dog-costume/", 27, 18, 3029, 3554], ["vetriscience-composure-max-liquid-for-dogs-cats/", 26, 0, 1042, 1395], ["rubies-red-riding-hood-dog-costume/", 25, 32, 6057, 9893], ["california-costumes-elvis-dog-costume-american-eagle-viva-vegas/", 24, 6, 3303, 727], ["farmina-vet-life-canine-hp-derma-dry-dog-food-fish-264lbs/", 24, 10, 3075, 2787], ["rubies-bell-hop-pup-dog-costume/", 24, 4, 534, 177], ["disney-villains-cruella-deville-dog-costumerubies/", 23, 4, 4205, 1151], ["rex-specs-v2-dog-goggles-pike-purple/", 21, 0, 254, 43], ["ghostbusters-dog-costume/", 20, 68, 4417, 10886], ["real-madrid-dog-jersey/", 20, 10, 3400, 1097], ["winnie-pooh-piglet-dog-costumerubies/", 19, 5, 5223, 3154], ["vets-best-flea-plus-tick-yard-kennel-spray/", 19, 5, 3604, 8333], ["rubies-giant-spider-dog-costume/", 19, 14, 3434, 4699]], "PLOSERS": [["star-wars-ewok-pet-costume/", 0, 146, 0, 20334], ["dog-is-human-dm-01-daily-multivitamin-for-dogs-chicken/", 0, 95, 0, 38658], ["big-dog-beauty-beast-dog-costumerubies-beast/", 12, 82, 5229, 17322], ["halloween-dracula-dog-costume/", 0, 64, 0, 20256], ["k9-sport-sack-kolossus-big-dog-backpack-black/", 39, 101, 75881, 110813], ["blue-natural-veterinary-diet-np-alligator-for-cat-canned/", 0, 58, 0, 4607], ["purina-pro-plan-veterinary-fortiflora-sa-synbiotic-action-dog-supplement/", 0, 56, 0, 26332], ["wizard-oz-glinda-good-witch-dog-costume/", 0, 51, 0, 7195], ["ghostbusters-dog-costume/", 20, 68, 4417, 10886], ["squirrel-dog-costume/", 0, 48, 0, 5557]], "AIBLOGTOP": [["can-dogs-eat-string-cheese/", 5720, 2005], ["what-is-the-most-popular-dry-dog-food-top-brands-for-your-dog/", 5703, 0], ["how-many-pounds-of-dry-dog-food-in-a-gallon/", 5468, 0], ["what-dry-dog-food-is-best-for-picky-eaters-a-practical-guide/", 4921, 0], ["10-dog-breeds-prone-to-bloat-gdv/", 4036, 1649], ["how-much-wet-dog-food-equals-1-cup-dry-a-simple-conversion-guide/", 3790, 0], ["can-dogs-eat-sauerkraut/", 3559, 1317], ["how-to-sanitizecat-carrier/", 3535, 12996], ["is-it-ok-to-soak-dry-dog-food-in-water-a-practical-guide/", 3310, 0], ["how-much-wet-dog-food-is-equivalent-to-dry/", 3227, 0], ["how-many-grams-in-a-cup-of-dry-dog-food-a-feeding-guide/", 3199, 0], ["pros-cons-catnip-understanding-its-effects-on-cats/", 3090, 2499], ["how-many-dry-cups-in-a-pound-of-dog-food/", 3004, 0], ["top-10-high-protein-dog-foods-for-active-breeds-made-in-the-usa/", 2892, 971], ["is-purina-pro-plan-a-good-dog-food/", 2866, 3193], ["5-best-dog-treats-for-training-low-calorie-high-rewards/", 2620, 1457], ["the-purr-fect-choice-hydrolyzed-protein-cat-food-options/", 2608, 15], ["can-you-soak-dry-dog-food-overnight-safety-and-tips/", 2401, 0], ["should-senior-dogs-eat-wet-or-dry-food/", 2282, 0], ["how-much-should-a-black-lab-weigh/", 1889, 0]], "AILTOP": [["dog-costumes_dog-halloween-costumes/", 1663, 168], ["dog-clothes_dog-hoodies/", 1180, 9], ["dog-costumes_dog-halloween-costumes/giant-breeds/", 1123, 29], ["dog-clothes/", 824, 120], ["dog-clothes_dog-snowsuits/", 535, 10], ["dog-costumes_holiday-dog-costumes/", 486, 14], ["_/carna4/", 424, 47], ["dog-travel_car-seats-covers-barriers_dog-car-barrier/", 360, 0], ["dog-costumes/harry-potter/", 325, 4], ["dog-costumes_dog-halloween-costumes_walking-dog-costumes/", 306, 5], ["dog-costumes_dog-halloween-costumes_food-frenzy-dog-costumes/", 304, 11], ["dog-sports/", 295, 12], ["dog-clothes_dog-jerseys/", 264, 10], ["_/eddie-bauer/", 260, 11], ["_/zack-and-zoey/", 209, 27], ["cat-carriers/dog-days/neutral/senior/", 198, 0], ["_/doggles/", 191, 0], ["dog-clothes_funny-dog-shirts/", 189, 53], ["dog-costumes_dog-halloween-costumes_sports-dog-costumes/", 179, 4], ["dog-costumes_halloween-dog-clothes/", 177, 12]], "AIPTOP": [["zack-zoey-scorpion-halloween-dog-costume-black/", 673, 4], ["rubies-head-onplatter-dog-costume/", 354, 1], ["california-costumes-sheep-dog-costume/", 327, 2], ["richell-paw-trax-top-entry-cat-litter-box-salmon-pink/", 175, 15], ["play-hyperx-dog-toy-pawdcast-microphone/", 163, 195], ["bat-wings-dog-costume-black/", 162, 2], ["necoichi-ninja-dog-harness-green/", 161, 90], ["puppy-latte-dog-costume/", 160, 0], ["yummy-world-ice-cream-sundae-dog-costume/", 112, 2], ["kong-bitenot-dog-collar/", 105, 19], ["neo-poly-dex-ophthalmic-suspension/", 95, 17], ["interceptor-plus/", 91, 2], ["palmers-for-pets-all-over-relief-balm-or-dogs-cats-with-cocoa-butter/", 91, 37], ["kurgo-step-n-strobe-dog-shoes/", 85, 30], ["veterinary-formula-clinical-care-antiseptic-antifungal-medicated-dog-shampoo/", 82, 8], ["proselect-empire-pet-cage/", 81, 5], ["kong-zoom-groom-natural-rubber-dog-grooming-brush/", 80, 22], ["profender-topical-dewormer-solution-for-cats/", 80, 10], ["big-dog-beauty-beast-dog-costumerubies-beast/", 78, 0], ["eddie-bauer-peak-performance-dog-jacket-navy/", 73, 3]]}, "MS": {"SITE": [9426, 8611, 12850, 9085, 9797, 7606, 7495, 8338, 6818, 6394, 3457, 6786, 7275, 8939, 9234], "L": [4281, 4405, 6564, 4219, 4554, 2968, 2321, 2744, 1961, 1614, 921, 1810, 2072, 2679, 3281], "BLOG": [1019, 696, 889, 856, 988, 1211, 1818, 2003, 1974, 1967, 963, 2716, 3101, 4101, 3425], "P": [3343, 2817, 4608, 3322, 3567, 2654, 2853, 3035, 2388, 2300, 1202, 1783, 1678, 1661, 2144]}, "aiw": [25108, 24505, 12444, 10170, 12616, 17614, 27311, 34074, 28039, 31273, 31957, 35623, 34708, 43362, 48552, 48023, 49719, 55295, 53055, 51968, 47242, 57010, 49813, 54680, 54211, 53359]};
+var NS='http://www.w3.org/2000/svg';
+function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+function f(n){return n.toLocaleString('en-US')}
+var ML=['Aug 25','Sep','Oct','Nov','Dec','Jan 26','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct'];
+function line(id,data,labels,opt){
+ var box=document.getElementById(id),W=opt.W||320,H=opt.H||170,L=opt.L||40,R=10,T=opt.T||18,B=24,pw=W-L-R,ph=H-T-B,li=data.length-1,ymax=opt.ymax,step=opt.step;
+ var svg=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':opt.aria},box);
+ var x=function(i){return L+i*pw/li},y=function(v){return T+ph-v/ymax*ph};
+ for(var v=0;v<=ymax;v+=step){el('line',{class:'grid',x1:L,x2:W-R,y1:y(v),y2:y(v)},svg);el('text',{class:'axis',x:L-6,y:y(v)+3.5,'text-anchor':'end'},svg).textContent=v>=1000?(v/1000)+'k':v}
+ opt.ticks.forEach(function(i){el('text',{class:'axis',x:x(i),y:H-6,'text-anchor':i===0?'start':i===li?'end':'middle'},svg).textContent=labels[i]});
+ var d=data.map(function(v,i){return (i?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1)}).join(' ');
+ el('path',{class:'area',d:d+' L'+x(li)+' '+y(0)+' L'+x(0)+' '+y(0)+' Z'},svg);
+ if(opt.mark!=null){el('line',{class:'mark',x1:x(opt.mark),x2:x(opt.mark),y1:T-4,y2:T+ph},svg);if(opt.markT)el('text',{class:'mark-t',x:x(opt.mark)+5,y:T-6},svg).textContent=opt.markT}
+ el('path',{class:'ln',d:d},svg);
+ el('circle',{class:'dot',cx:x(li),cy:y(data[li]),r:3.5},svg);
+ var cross=el('line',{class:'cross',y1:T,y2:T+ph,opacity:0},svg),hd=el('circle',{class:'dot',r:4,opacity:0},svg);
+ var tip=document.createElement('div');tip.className='tip';box.appendChild(tip);
+ var hit=el('rect',{x:L,y:T,width:pw,height:ph,fill:'transparent'},svg);
+ hit.addEventListener('pointermove',function(ev){var r=svg.getBoundingClientRect(),px=(ev.clientX-r.left)*W/r.width,i=Math.max(0,Math.min(li,Math.round((px-L)/pw*li)));
+  cross.setAttribute('x1',x(i));cross.setAttribute('x2',x(i));cross.setAttribute('opacity',1);hd.setAttribute('cx',x(i));hd.setAttribute('cy',y(data[i]));hd.setAttribute('opacity',1);
+  var s=r.width/W,br=box.getBoundingClientRect();tip.innerHTML=(opt.tipL?opt.tipL(i):labels[i])+' · <b>'+f(data[i])+'</b> '+opt.unit;tip.style.left=Math.max(70,Math.min(br.width-70,(r.left-br.left)+x(i)*s))+'px';tip.style.top=((r.top-br.top)+y(data[i])*s-10)+'px';tip.style.opacity=1});
+ hit.addEventListener('pointerleave',function(){cross.setAttribute('opacity',0);hd.setAttribute('opacity',0);tip.style.opacity=0});
+}
+var FM=['Aug 2025','Sep 2025','Oct 2025','Nov 2025','Dec 2025','Jan 2026','Feb 2026','Mar 2026','Apr 2026','May 2026','Jun 2026','Jul 2026','Aug 2026','Sep 2026','Oct 2026'];
+[['m-blog','BLOG'],['m-l','L'],['m-p','P']].forEach(function(c){line(c[0],DATA.MS[c[1]],ML,{ymax:7000,step:2000,ticks:[0,5,10,14],mark:10.6,unit:'clicks',aria:'Monthly clicks',tipL:function(i){return FM[i]}})});
+var WL=[];var s0=new Date(2026,4,18);for(var i=0;i<26;i++){var d=new Date(s0);d.setDate(d.getDate()+7*i);WL.push(['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][d.getMonth()]+' '+d.getDate())}
+line('c-ai',DATA.aiw,WL,{W:720,H:230,L:48,T:22,ymax:60000,step:20000,ticks:[0,6,12,18,25],mark:4.6,markT:'Publishing starts Jun 19',unit:'AI impressions',aria:'Weekly AI impressions',tipL:function(i){return 'Week of '+WL[i]}});
+
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function link(base,slug){return '<a href="https://www.baxterboo.com'+base+slug+'" target="_blank" rel="noopener">'+esc(slug.replace(/\/$/,''))+'</a>'}
+function cls(a,b){return b>a?' up':b<a?' down':''}
+function fill(id,rows,base,mode){document.getElementById(id).innerHTML=rows.map(function(r){
+ if(mode==='blog')return '<tr><td>'+link(base,r[0])+'</td><td class="n">'+f(r[2])+'</td><td class="n'+cls(r[2],r[1])+'">'+f(r[1])+'</td><td class="n">'+f(r[3])+'</td></tr>';
+ if(mode==='top')return '<tr><td>'+link(base,r[0])+'</td><td class="n">'+f(r[2])+'</td><td class="n'+cls(r[2],r[1])+'">'+f(r[1])+'</td><td class="n">'+f(r[4])+'</td><td class="n'+cls(r[4],r[3])+'">'+f(r[3])+'</td></tr>';
+ if(mode==='loss')return '<tr><td>'+link(base,r[0])+'</td><td class="n">'+f(r[2])+'</td><td class="n">'+f(r[1])+'</td><td class="n down">−'+f(r[2]-r[1])+'</td></tr>';
+ return '<tr><td>'+link(base,r[0])+'</td><td class="n">'+f(r[2])+'</td><td class="n'+cls(r[2],r[1])+'">'+f(r[1])+'</td></tr>'}).join('')}
+var D=DATA.D;
+fill('t-blog',D.BLOGTOP,'/blog/a.cfm/','blog');
+fill('t-l',D.LTOP,'/l.cfm/','top');fill('t-ll',D.LLOSERS,'/l.cfm/','loss');
+fill('t-p',D.PTOP,'/p.cfm/','top');fill('t-pl',D.PLOSERS,'/p.cfm/','loss');
+fill('a-blog',D.AIBLOGTOP,'/blog/a.cfm/','ai');fill('a-l',D.AILTOP,'/l.cfm/','ai');fill('a-p',D.AIPTOP,'/p.cfm/','ai');
+
+var links=[].slice.call(document.querySelectorAll('.nav a'));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+function set(i){links.forEach(function(a,j){var on=j===i;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}
+function spy(){var y=120,cur=-1;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<=y)cur=i});
+if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2)cur=secs.length-1;set(cur)}
+window.addEventListener('scroll',spy,{passive:true});window.addEventListener('resize',spy);spy();
+})();
+</script>
+
+</body></html>
