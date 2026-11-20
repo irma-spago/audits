@@ -1,0 +1,225 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Honestly pHresh Cleanup Review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: wide single column, fixed dark top bar with section nav, summary table, then one section per client action with tables per sub-group */
+:root{
+--mint:#54e399;--mint-light:#7eefc1;--mint-dark:#1a7a4a;--mint-wash:#e3f7ec;
+--amber:#e8a13a;--amber-wash:#fbf0dd;--amber-dark:#8a5a12;
+--red-wash:#fbe6e1;--red-dark:#a33a25;
+--ink:#051f21;--bar:#051f21;--bar-text:#c4d2cd;--paper:#f6f9f8;--card:#fff;--sunken:#edf2f0;--line:#dfe6e4;--muted:#56696a;--faint:#7b8d8c;--link:#1a7a4a;--note:#f0f7f3;
+--sans:Geist,"Helvetica Neue",Arial,sans-serif;--label:Manrope,Arial,sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,monospace;--col:960px}
+:root{color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 var(--sans)}
+a{color:inherit;text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--mint-dark);outline-offset:3px;border-radius:4px}
+code{font-family:var(--mono);font-size:.84em;background:var(--sunken);border:1px solid var(--line);border-radius:5px;padding:1px 6px;overflow-wrap:anywhere}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bar)}
+.top{position:fixed;top:0;left:0;right:0;padding-top:env(safe-area-inset-top,0px);z-index:20;background:var(--bar);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.top-in{max-width:calc(var(--col) + 32px);margin:auto;height:64px;display:flex;align-items:center;gap:32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.brand{font-weight:700;font-size:20px;letter-spacing:-.04em;text-decoration:none;flex:0 0 auto;color:#fff}
+.nav{display:flex;justify-content:flex-end;margin-left:auto;gap:2px;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1 1 0%}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;font-size:13px;color:var(--bar-text);text-decoration:none;padding:7px 11px;border-radius:999px;transition:background .15s,color .15s}
+.nav a:hover,.nav a.active{background:rgba(84,227,153,.12);color:var(--mint-light)}
+@media(max-width:860px){.top-in{gap:16px}.nav{justify-content:flex-start}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.nav a{transition:none}}
+
+main{max-width:calc(var(--col) + 32px);margin:0 auto;padding-top:calc(64px + 56px + env(safe-area-inset-top,0px));padding-bottom:80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font:600 10.5px var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 6px}
+h1{font-size:34px;line-height:1.15;letter-spacing:-.025em;font-weight:500;margin:0 0 12px;text-wrap:balance}
+.lede{color:var(--muted);font-size:16px;margin:0 0 28px;max-width:720px}
+@media(max-width:600px){h1{font-size:28px}}
+
+section{padding:48px 0 8px;border-top:1px solid var(--line);margin-top:48px}
+.head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 4px}
+h2{font-size:24px;line-height:1.25;letter-spacing:-.02em;font-weight:500;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 20px;max-width:760px}
+h3{font-size:17px;font-weight:500;margin:36px 0 6px}
+h3 + .sub{margin-bottom:14px;font-size:14.5px}
+.count-pill{font:700 10px var(--label);letter-spacing:.08em;padding:3px 9px;border-radius:999px;background:var(--sunken);color:var(--muted);border:1px solid var(--line)}
+
+.note{background:var(--note);border:1px solid var(--line);border-left:3px solid var(--mint);border-radius:8px;padding:12px 16px;margin:0 0 20px;font-size:14.5px;max-width:860px}
+.note b{font-weight:600}
+
+.wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--line);background:var(--card)}
+.tbl{width:100%;min-width:720px;border-collapse:collapse;font-size:14.5px;line-height:1.6}
+.tbl th,.tbl td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.tbl th{font:600 10.5px var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--faint);background:var(--sunken);white-space:nowrap}
+.tbl td.post a{font-weight:500;color:var(--link)}
+.tbl td.reason{color:var(--muted);font-size:13.5px}
+.tbl td.post .act{display:block;margin-top:6px;font:600 10px var(--label);letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.tbl td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.col-post{width:30%}.col-reason{width:22%}.col-view{width:120px}
+
+.v{display:inline-block;font:700 9.5px var(--label);letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.v.agree{background:var(--mint-wash);color:var(--mint-dark)}
+.v.partly{background:var(--amber-wash);color:var(--amber-dark)}
+.v.disagree{background:var(--red-wash);color:var(--red-dark)}
+
+.summary{min-width:560px}
+.summary td a{color:var(--link);font-weight:500}
+
+footer{max-width:var(--col);margin:0 auto;padding-block:24px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));color:var(--faint);font-size:13px;border-top:1px solid var(--line)}
+footer a{color:var(--muted)}
+</style>
+
+<header class="top"><div class="top-in"><a class="brand" href="#top">FlyRank</a>
+<nav class="nav" aria-label="Sections"><a href="#consolidate">Consolidate</a><a href="#review">Review</a><a href="#delete">Delete</a><a href="#keep">Keep &amp; fix</a></nav>
+</div></header>
+
+<main id="top">
+<p class="eyebrow">Honestly pHresh blog · Cleanup list review</p>
+<h1>Our view on the blog cleanup list</h1>
+<p class="lede">We read all 45 posts on your cleanup list, checked them against your current product ingredients and catalog, and gave our view on each action. Each post below is grouped by the action you proposed, with your reason and our response side by side.</p>
+
+<section id="consolidate">
+<p class="eyebrow">Your action</p>
+<div class="head"><h2>Consolidate + redirect</h2><span class="count-pill" data-count="consolidate"></span></div>
+<p class="sub">You proposed merging these posts into the new founder baking-soda page and redirecting them.</p>
+<div class="note"><b>Our position: keep the blog posts and link them to the founder page.</b> A blog post and a brand page serve different searches and different purposes. The founder page covers the main topic, and each post covers its own subtopic: comparisons, sensitive skin, zero-waste, ingredient decoding. Merging and redirecting would remove pages that match those searches. Linking every post to the founder page makes it the hub of the topic and strengthens its authority.</div>
+<div data-group="consolidate"></div>
+</section>
+
+<section id="review">
+<p class="eyebrow">Your action</p>
+<div class="head"><h2>Review</h2><span class="count-pill" data-count="review"></span></div>
+<p class="sub">Posts you marked for review, mostly on the condition of whether you still use an ingredient or sell a product.</p>
+
+<h3>Magnesium and zinc ricinoleate</h3>
+<p class="sub">Your current product pages list Magnesium Hydroxide and Zinc Ricinoleate in the deodorant sticks and twist-ups, and Magnesium Chloride in the Pre + Probiotic sprays. Magnesium is central to your deodorants, but your messaging hardly mentions it. These posts are a chance to fix that.</p>
+<div data-group="review-ingredients"></div>
+
+<h3>Products not in the current catalog</h3>
+<p class="sub">Your catalog has no cream deodorant or hand sanitizer.</p>
+<div data-group="review-products"></div>
+
+<h3>Medical topics</h3>
+<div data-group="review-medical"></div>
+</section>
+
+<section id="delete">
+<p class="eyebrow">Your action</p>
+<div class="head"><h2>Delete</h2><span class="count-pill" data-count="delete"></span></div>
+<p class="sub">We grouped these by the reason you gave.</p>
+
+<h3>DIY remedies</h3>
+<p class="sub">People searching for DIY oils and natural remedies are already looking for natural solutions, which makes them likely Honestly pHresh customers. Content that only talks about your products won't rank in search or AI engines. Posts on your audience's everyday concerns and habits widen your reach and lead readers to your products.</p>
+<div data-group="delete-diy"></div>
+
+<h3>Products you don't make</h3>
+<p class="sub">Someone searching for a specific probiotic deodorant, or troubleshooting their antiperspirant, is in the market for what you sell. Both posts already point readers to Honestly pHresh.</p>
+<div data-group="delete-notsold"></div>
+
+<h3>Armpit detox</h3>
+<p class="sub">Your reason was that these posts contradict your article <a href="https://honestlyphresh.com/blogs/articles-by-phresh/why-you-don-t-need-to-detox-your-armpits-when-transitioning-to-natural-deodorant" target="_blank" rel="noopener">Why you DON'T NEED to DETOX your armpits</a>. We read all five, and each one opens by saying an armpit detox is not needed. They agree with your article and bring people searching for "armpit detox" to your view. We agree with deleting two of them, for a different reason.</p>
+<div data-group="delete-detox"></div>
+
+<h3>Medical topics</h3>
+<p class="sub">We agree that risky, medical content should go. We read each post to confirm it is medical and not everyday care.</p>
+<div data-group="delete-medical"></div>
+</section>
+
+<section id="keep">
+<p class="eyebrow">Your action</p>
+<div class="head"><h2>Keep &amp; fix</h2><span class="count-pill" data-count="keep"></span></div>
+<p class="sub">We agree with all five. One thing to plan for: the Soothe Post Shave and Wax Oil is currently sold out, and every fix below sends readers to it. Restock it before these updates go live, or use a temporary call to action.</p>
+<div data-group="keep"></div>
+</section>
+</main>
+
+<footer>FlyRank · Honestly pHresh blog cleanup review · November 2026 · Based on your cleanup list, the article text on honestlyphresh.com and the ingredient lists on your product pages, checked Nov 20, 2026.</footer>
+
+<script>
+(function(){
+var B='https://honestlyphresh.com/blogs/';
+// [group, client action, title, path, client reason, verdict, our reason]
+var rows=[
+["consolidate","Consolidate + redirect","Deodorant without baking soda: How to choose one that works for you","skin-microbiome/deodorant-without-baking-soda-how-to-choose-one-that-works-for-you","Duplicate topic; merge into the new founder baking-soda page and 301-redirect here","disagree","Targets the general how-to-choose search for baking-soda-free deodorant. Keep it and link it to the founder page."],
+["consolidate","Consolidate + redirect","Baking soda vs. baking-soda-free deodorant: How to choose","skin-microbiome/baking-soda-vs-baking-soda-free-deodorant-how-to-choose","Duplicate topic; merge into the new founder baking-soda page and 301-redirect here","disagree","A comparison search (\"baking soda vs\"), which a brand page doesn't answer. Keep it and link it to the founder page."],
+["consolidate","Consolidate + redirect","Zero waste deodorant with no baking soda: how to choose","skin-microbiome/zero-waste-deodorant-with-no-baking-soda-how-to-choose","Duplicate topic; merge into the new founder baking-soda page and 301-redirect here","disagree","Reaches sustainability-minded shoppers, a separate audience that fits your paper packaging. Keep it and link it to the founder page."],
+["consolidate","Consolidate + redirect","Choosing baking soda-free deodorant for sensitive skin","body-odor/choosing-baking-soda-free-deodorant-for-sensitive-skin","Duplicate topic; merge into the new founder baking-soda page and 301-redirect here","disagree","Covers the sensitive-skin subtopic. Keep it and link it to the founder page."],
+["consolidate","Consolidate + redirect","Baking soda free deodorant that actually fits sensitive skin.","news/baking-soda-free-deodorant-that-actually-fits-sensitive-skin","Duplicate topic; merge into the new founder baking-soda page and 301-redirect here","disagree","Covers finding a formula that fits sensitive skin. Keep it and link it to the founder page."],
+["consolidate","Consolidate + redirect","Natural deodorant without baking soda, decoded.","news/natural-deodorant-without-baking-soda-decoded","Duplicate topic; merge into the new founder baking-soda page and 301-redirect here","disagree","Targets the \"natural deodorant\" search and explains what's in the formulas. Keep it and link it to the founder page."],
+["consolidate","Consolidate + redirect","Baking soda free deodorant: How to choose a formula that fits your skin","news/baking-soda-free-deodorant-how-to-choose-a-formula-that-fits-your-skin","Duplicate topic; merge into the new founder baking-soda page and 301-redirect here","disagree","Covers choosing a formula by skin type. Keep it and link it to the founder page."],
+["consolidate","Consolidate + redirect","Baking soda free deodorant for sensitive underarms","news/baking-soda-free-deodorant-for-sensitive-underarms","Duplicate topic; merge into the new founder baking-soda page and 301-redirect here","disagree","Covers underarm irritation specifically. Keep it and link it to the founder page."],
+["consolidate","Consolidate + redirect","Why you should SAY NO to deodorant with BAKING SODA (duplicate copy)","articles-by-phresh/why-you-should-say-no-to-deodorant-with-baking-soda-1","Duplicate topic; merge into the new founder baking-soda page and 301-redirect here","partly","This is an exact copy of your original article in the News blog. Don't merge it into the founder page. Redirect this copy to the original article so the two stop competing."],
+
+["review-ingredients","Review","Magnesium deodorant: How it works and how to choose one","news/magnesium-deodorant-how-it-works-and-how-to-choose-one","Delete if we no longer use magnesium","disagree","You still use magnesium in every deodorant. Keep it and link it to the sticks and sprays."],
+["review-ingredients","Review","Magnesium vs aluminum deodorant: Which is right for you?","switching-to-natural/magnesium-vs-aluminum-deodorant-which-is-right-for-you","Delete if we no longer use magnesium","disagree","Keep it. It supports your aluminum-free positioning with the ingredient that replaces aluminum in your formulas."],
+["review-ingredients","Review","Magnesium oil as deodorant: Does it work?","switching-to-natural/magnesium-oil-as-deodorant-does-it-work","DIY angle; delete if we no longer use magnesium","disagree","Keep it. It reaches people already interested in magnesium and already mentions Honestly pHresh. Make your magnesium-based sticks the recommended option."],
+["review-ingredients","Review","Magnesium-free deodorant: How to find the right formula","switching-to-natural/magnesium-free-deodorant-how-to-find-the-right-formula","Depends on whether our formulas use magnesium","partly","You do use magnesium, but this post is the one magnesium article that works against you. It explains how to avoid an ingredient that's in every product you sell. Rewrite it to address the sensitivity concerns behind the search and present your formulas, or retire it."],
+["review-ingredients","Review","6 Benefits of Magnesium in Deodorant","articles-by-phresh/6-benefits-of-magnesium-in-deodorant","Our older article; delete if we no longer use magnesium","disagree","Your own article on a core ingredient. Refresh it and link it to your products."],
+["review-ingredients","Review","Zinc ricinoleate deodorant: What it does and how to choose one","skin-microbiome/zinc-ricinoleate-deodorant-what-it-does-and-how-to-choose-one","Delete unless our sticks use zinc ricinoleate","disagree","Your sticks and twist-ups list Zinc Ricinoleate next to Magnesium Hydroxide and arrowroot powder. Keep it."],
+
+["review-products","Review","Natural cream deodorant: How to choose and use one","switching-to-natural/natural-cream-deodorant-how-to-choose-and-use-one","We don't currently sell a cream; delete unless relaunching","disagree","Anyone searching for a natural cream deodorant is shopping for a natural deodorant. Keep it and point readers to your twist-ups."],
+["review-products","Review","Cream deodorant for men: How to choose the right formula and format","body-odor/cream-deodorant-for-men-how-to-choose-the-right-formula-and-format","We don't currently sell a cream; delete unless relaunching","disagree","Same as above. Point readers to your men's sticks, like Bold Wild Oak and Vital Vetiver."],
+["review-products","Review","“Fresh Hands” on demand, introducing our NEW Hand Sanitizer Spray","articles-by-phresh/fresh-hands-on-demand-introducing-our-new-hand-sanitizer-spray","Delete if hand sanitizer is discontinued","agree","The hand sanitizer isn't in your catalog, and this is a launch announcement with no search value. Delete it and redirect it to your products page."],
+
+["review-medical","Review","Vulvar itching: causes, relief and when to seek care","intimate-care/vulvar-itching-causes-relief-and-when-to-seek-care","Medical; delete unless rewritten as everyday care + see a doctor","agree","The copy is medical throughout and never mentions your products. Delete it unless it's rewritten as everyday care."],
+["review-medical","Review","Vulvar itching in menopause: causes and relief","intimate-care/vulvar-itching-in-menopause-causes-and-relief","Medical; delete unless rewritten as everyday care + see a doctor","agree","Medical copy with no product connection. Delete it unless it's rewritten."],
+["review-medical","Review","Menopause and vaginal odor: what changes and when to get care","intimate-care/menopause-and-vaginal-odor-what-changes-and-when-to-get-care","Medical; needs expert review","agree","Medical copy with no product connection. Keep it only after expert review."],
+["review-medical","Review","Is feminine wash safe during pregnancy?","intimate-care/is-feminine-wash-safe-during-pregnancy","Relevant to our wash, but needs expert review","agree","This one is about your feminine wash and links to it throughout. Keep it after expert review."],
+
+["delete-diy","Delete","DIY after-shave oil: A simple recipe and after-wax option","aftercare/diy-after-shave-oil-a-simple-recipe-and-after-wax-option","Teaches shoppers to make their own oil instead of buying Soothe","partly","This post does give a recipe, so your concern makes sense here. But people searching for DIY after-shave oil already use natural oils and are your Soothe audience. Keep the topic and rework it so Soothe is the ready-made option."],
+["delete-diy","Delete","Turmeric for underarm odor: What to know before trying a DIY paste","body-odor/turmeric-for-underarm-odor-what-to-know-before-trying-a-diy-paste","DIY remedy instead of our products","disagree","The post doesn't teach a DIY remedy. It opens by saying turmeric isn't an established solution and that a paste can stain or irritate skin. It catches DIY searches and steers readers to a proper deodorant. Keep it and add product links."],
+
+["delete-notsold","Delete","Antiperspirant deodorant not working? How to troubleshoot wetness and odor","body-odor/antiperspirant-deodorant-not-working-how-to-troubleshoot-wetness-and-odor","We don't make antiperspirant","disagree","People unhappy with their antiperspirant are the audience most ready to switch. The post already mentions Honestly pHresh. Keep it and strengthen the link to your aluminum-free deodorants."],
+["delete-notsold","Delete","Manuka probiotic deodorant: what to check before you buy","skin-microbiome/manuka-probiotic-deodorant-what-to-check-before-you-buy","Product we don't make","disagree","Someone searching for a manuka probiotic deodorant wants a probiotic deodorant. The post already mentions Honestly pHresh repeatedly. Keep it and point to your Pre + Probiotic sprays."],
+
+["delete-detox","Delete","Tea tree oil armpit detox: What to know before you try it","switching-to-natural/tea-tree-oil-armpit-detox-what-to-know-before-you-try-it","Armpit detox contradicts our own \"you don't need to detox\" article","disagree","The post opens by saying you don't need a tea tree oil detox to switch deodorants. It matches your stance. Keep it and link it to your detox article."],
+["delete-detox","Delete","Lime armpit detox: Is it safe or necessary?","switching-to-natural/lime-armpit-detox-is-it-safe-or-necessary","Armpit detox contradicts our own article; DIY remedy","disagree","The post opens by saying a lime detox isn't necessary and can irritate skin. It matches your stance and warns against the DIY remedy. Keep it."],
+["delete-detox","Delete","Apple cider vinegar armpit detox: What to know","switching-to-natural/apple-cider-vinegar-armpit-detox-what-to-know","Armpit detox contradicts our own article; DIY remedy","disagree","The post opens by saying a vinegar detox isn't necessary and can irritate skin. It matches your stance. Keep it."],
+["delete-detox","Delete","Armpit detox while breastfeeding: What to know","switching-to-natural/armpit-detox-while-breastfeeding-what-to-know","Armpit detox plus a health topic","agree","It doesn't contradict your article, since it also says a detox isn't needed. We agree with deleting it because breastfeeding is a health topic."],
+["delete-detox","Delete","Armpit detox and breast cancer: What the evidence says","switching-to-natural/armpit-detox-and-breast-cancer-what-the-evidence-says","Cancer topic is high-risk for a cosmetic brand","agree","Cancer is high-risk for a cosmetic brand. The post also says antiperspirants haven't been shown to cause cancer, which sits awkwardly next to your aluminum-free messaging."],
+
+["delete-medical","Delete","Aloe vera for vulvar itching: What to know before using it","intimate-care/aloe-vera-for-vulvar-itching-what-to-know-before-using-it","Home remedy for a medical symptom","agree","Medical throughout and never mentions your products."],
+["delete-medical","Delete","Vitamin E oil for vulvar dryness: What to know","intimate-care/vitamin-e-oil-for-vulvar-dryness-what-to-know","Home remedy for a medical symptom","agree","Medical throughout and never mentions your products."],
+["delete-medical","Delete","Coconut oil for vulvar itching: What to know","intimate-care/coconut-oil-for-vulvar-itching-what-to-know","Home remedy for a medical symptom","agree","Medical throughout and never mentions your products."],
+["delete-medical","Delete","Baking soda paste for vulvar itching: what to do instead","intimate-care/baking-soda-paste-for-vulvar-itching-what-to-do-instead","Home remedy and medical symptom","agree","It mentions your products and fits your stance on baking soda, but the subject is still a medical symptom."],
+["delete-medical","Delete","Vulvar burning when peeing: Possible causes and what to do","intimate-care/vulvar-burning-when-peeing-possible-causes-and-what-to-do","Medical symptom (possible infection), not cosmetic content","agree","Covers possible infections. Clearly medical."],
+["delete-medical","Delete","Vulvar irritation in pregnancy: causes, gentle care, and when to call","intimate-care/vulvar-irritation-in-pregnancy-causes-gentle-care-and-when-to-call","Pregnancy medical advice","agree","Pregnancy medical advice."],
+["delete-medical","Delete","Vaginal odor during pregnancy: What to know and when to call","intimate-care/vaginal-odor-during-pregnancy-what-to-know-and-when-to-call","Pregnancy medical advice","agree","Pregnancy medical advice with no product connection."],
+["delete-medical","Delete","How to care for your skin microbiome after antibiotics","skin-microbiome/how-to-care-for-your-skin-microbiome-after-antibiotics","Medical topic","disagree","The copy reads as everyday care. It opens by saying you usually don't need a special product or treatment after antibiotics. Skin microbiome is one of your core topics. Keep it after a quick review."],
+["delete-medical","Delete","Deodorant rash vs yeast infection: how to compare underarm symptoms","sensitive-skin/deodorant-rash-vs-yeast-infection-how-to-compare-underarm-symptoms","Diagnosis content","partly","The yeast-infection comparison is diagnosis content. But deodorant rash is a common worry for people switching to natural deodorant. Rewrite it as a deodorant-rash care post without the diagnosis angle, or delete it."],
+
+["keep","Keep & fix","How to clean a razor after shaving","aftercare/how-to-clean-a-razor-after-shaving","Keep: add a tip to lather with our foaming feminine wash and link to Soothe for after","agree","Agreed."],
+["keep","Keep & fix","After shave oil: How to choose and use it","aftercare/after-shave-oil-how-to-choose-and-use-it","Keep: link to Soothe Post Shave and Wax Oil; replace men's face-shaving image","agree","Agreed. Soothe is currently sold out."],
+["keep","Keep & fix","After-shave care: How to use aftershave and shave oil","aftercare/after-shave-care-how-to-use-aftershave-and-shave-oil","Keep: feature Soothe, add feminine wash foam as a shave lather for legs and bikini area; use real product photos","agree","Agreed. Soothe is currently sold out."],
+["keep","Keep & fix","An after shaving routine for comfortable skin","aftercare/an-after-shaving-routine-for-comfortable-skin","Keep: build the routine around feminine wash foam to shave, then Soothe after","agree","Agreed."],
+["keep","Keep & fix","Witch hazel after shaving: what to know before you use it","aftercare/witch-hazel-after-shaving-what-to-know-before-you-use-it","Keep: reframe toward Soothe as the gentler option; link to it","agree","Agreed."]
+];
+var label={agree:"We agree",partly:"Partly agree",disagree:"We disagree"};
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function table(list){
+return '<div class="wrap"><table class="tbl"><colgroup><col class="col-post"><col class="col-reason"><col class="col-view"><col></colgroup>'+
+'<thead><tr><th>Post</th><th>Your reason</th><th>Our view</th><th>Why</th></tr></thead><tbody>'+
+list.map(function(r){return '<tr><td class="post"><a href="'+B+r[3]+'" target="_blank" rel="noopener">'+esc(r[2])+'</a><span class="act">'+esc(r[1])+'</span></td><td class="reason">'+esc(r[4])+'</td><td><span class="v '+r[5]+'">'+label[r[5]]+'</span></td><td>'+esc(r[6])+'</td></tr>'}).join('')+
+'</tbody></table></div>'}
+document.querySelectorAll('[data-group]').forEach(function(el){
+var g=el.getAttribute('data-group');el.innerHTML=table(rows.filter(function(r){return r[0]===g}))});
+var acts=[["consolidate","Consolidate + redirect"],["review","Review"],["delete","Delete"],["keep","Keep & fix"]];
+var tot={n:0,agree:0,partly:0,disagree:0};
+var sumHtml=acts.map(function(a){
+var l=rows.filter(function(r){return r[0].split('-')[0]===a[0]});var c={agree:0,partly:0,disagree:0};
+l.forEach(function(r){c[r[5]]++});tot.n+=l.length;tot.agree+=c.agree;tot.partly+=c.partly;tot.disagree+=c.disagree;
+var pill=document.querySelector('[data-count="'+a[0]+'"]');if(pill)pill.textContent=l.length+' posts';
+return '<tr><td><a href="#'+a[0]+'">'+a[1]+'</a></td><td class="n">'+l.length+'</td><td class="n">'+c.agree+'</td><td class="n">'+c.partly+'</td><td class="n">'+c.disagree+'</td></tr>'}).join('')+
+'<tr><td><b>Total</b></td><td class="n"><b>'+tot.n+'</b></td><td class="n"><b>'+tot.agree+'</b></td><td class="n"><b>'+tot.partly+'</b></td><td class="n"><b>'+tot.disagree+'</b></td></tr>';
+var links=[].slice.call(document.querySelectorAll('.nav a'));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+function set(i){links.forEach(function(a,j){var on=j===i;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}
+function spy(){var y=120,cur=-1;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<=y)cur=i});
+if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2)cur=secs.length-1;set(cur)}
+window.addEventListener('scroll',spy,{passive:true});window.addEventListener('resize',spy);spy();
+})();
+</script>
+
+</body></html>
