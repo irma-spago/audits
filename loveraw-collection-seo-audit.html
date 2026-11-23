@@ -1,0 +1,264 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>LoveRaw Collections SEO Audit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: one 760px reading column under a fixed ink nav bar, FlyRank report style */
+:root{--mint:#54e399;--mint-dark:#1a7a4a;--mint-wash:#e3f7ec;--amber:#e8a13a;--amber-wash:#fbf0dd;--amber-dark:#8a5a12;--red:#d9534a;--red-wash:#fbe4e2;--red-dark:#9b2c24;--ink:#051f21;--bar:#051f21;--paper:#f6f9f8;--card:#fff;--sunken:#edf2f0;--line:#dfe6e4;--muted:#56696a;--faint:#7b8d8c;
+--sans:Geist,"Helvetica Neue",Arial,sans-serif;--label:Manrope,Arial,sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,monospace;--col:1120px}
+:root,:root[data-theme="dark"]{color-scheme:light}
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 8px}
+.menu > div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;min-width:0}
+.menu .k{font:600 10.5px var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
+.menu ul{list-style:none;padding:0;margin:0;font-size:13.5px;line-height:1.5}
+.menu li{padding:4px 0;border-bottom:1px dashed var(--line)}
+.menu li:last-child{border-bottom:0}
+.menu .new{font:700 9px var(--label);letter-spacing:.08em;text-transform:uppercase;color:var(--mint-dark);background:var(--mint-wash);border-radius:999px;padding:1px 6px;margin-left:4px}
+.menu .chg{font:700 9px var(--label);letter-spacing:.08em;text-transform:uppercase;color:var(--amber-dark);background:var(--amber-wash);border-radius:999px;padding:1px 6px;margin-left:4px}
+.menu small{display:block;color:var(--faint);font-size:12px}
+@media(max-width:600px){.menu{grid-template-columns:1fr}}
+.pill{font:700 9.5px var(--label);letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:999px;white-space:nowrap;display:inline-block}
+.pill.idx{background:var(--mint-wash);color:var(--mint-dark)}
+.pill.no{background:var(--red-wash);color:var(--red-dark)}
+.pill.later{background:var(--amber-wash);color:var(--amber-dark)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.7 var(--sans)}
+a{color:inherit;text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--mint-dark);outline-offset:3px;border-radius:4px}
+code{font-family:var(--mono);font-size:.84em;background:var(--sunken);border:1px solid var(--line);border-radius:5px;padding:1px 6px;overflow-wrap:anywhere}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bar)}
+.top{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:20;background:var(--bar);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.top-in{max-width:calc(var(--col) + 32px);margin:auto;height:64px;display:flex;align-items:center;gap:24px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.brand{font-weight:700;font-size:20px;letter-spacing:-.04em;text-decoration:none;flex:0 0 auto;color:#fff}
+.nav{display:flex;margin-left:auto;gap:2px;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1 1 0%;justify-content:flex-end}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;font-size:13px;color:#c4d2cd;text-decoration:none;padding:7px 11px;border-radius:999px;transition:background .15s,color .15s}
+.nav a:hover{background:rgba(255,255,255,.08);color:#fff}
+@media(max-width:760px){.nav{justify-content:flex-start}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.nav a{transition:none}}
+main{max-width:var(--col);margin:0 auto;padding-top:calc(64px + 56px);padding-bottom:80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font:600 10.5px var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 6px}
+h1{font-size:34px;line-height:1.15;letter-spacing:-.025em;font-weight:500;margin:0 0 12px;text-wrap:balance}
+.lede{color:var(--muted);font-size:16px;margin:0 0 28px;max-width:760px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 8px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-size:26px;font-weight:500;letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
+.stat span{font:500 12px var(--label);color:var(--muted)}
+@media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}h1{font-size:28px}}
+section{padding:48px 0 8px;border-top:1px solid var(--line);margin-top:48px}
+.head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 4px}
+h2{font-size:24px;line-height:1.25;letter-spacing:-.02em;font-weight:500;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 20px}
+h3{font-size:16px;font-weight:500;margin:28px 0 8px}
+.badge{font:700 9.5px var(--label);letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--mint-wash);color:var(--mint-dark);white-space:nowrap}
+.badge.high{background:var(--amber-wash);color:var(--amber-dark)}
+.badge.crit{background:var(--red-wash);color:var(--red-dark)}
+ul.list{list-style:none;padding:0;margin:0}
+ul.list li{position:relative;padding:10px 0 10px 20px;border-bottom:1px solid var(--line)}
+ul.list li:last-child{border-bottom:0}
+ul.list li::before{content:"";position:absolute;left:2px;top:19px;width:7px;height:7px;border-radius:50%;background:var(--red)}
+ul.list.fix li::before{background:var(--mint)}
+ul.list b{font-weight:600}
+.tbl{width:100%;border-collapse:collapse;background:var(--card);font-size:13.5px;font-variant-numeric:tabular-nums}
+.tbl th,.tbl td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.tbl th{font:600 10.5px var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--faint);background:var(--sunken);white-space:nowrap}
+.tbl td.n{text-align:right;white-space:nowrap}
+.tbl a{font-weight:500;color:var(--mint-dark)}
+.wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:0 0 8px}
+.bad{color:var(--red-dark);font-weight:600}
+.warn{color:var(--amber-dark);font-weight:600}
+.ok{color:var(--mint-dark)}
+.counts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.count{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;min-width:0}
+.count b{font-size:22px;font-weight:500}
+.count p{margin:4px 0 0;color:var(--muted);font-size:13.5px;line-height:1.55}
+@media(max-width:600px){.counts{grid-template-columns:1fr}}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 8px}
+.pair > div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;min-width:0}
+.pair .k{font:600 10.5px var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin:0 0 6px}
+@media(max-width:600px){.pair{grid-template-columns:1fr}}
+pre{font:12.5px/1.6 var(--mono);background:var(--sunken);border:1px solid var(--line);border-radius:10px;padding:12px 14px;overflow-x:auto;margin:0}
+ol.steps{list-style:none;counter-reset:s;padding:0;margin:0}
+ol.steps li{counter-increment:s;position:relative;padding:12px 0 12px 40px;border-bottom:1px solid var(--line)}
+ol.steps li:last-child{border-bottom:0}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:12px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--paper);font:600 12px/24px var(--label);text-align:center}
+ol.steps .who{display:inline-block;font:700 9.5px var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-left:6px}
+footer{max-width:var(--col);margin:0 auto;padding-top:24px;padding-bottom:48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));color:var(--faint);font-size:13px;border-top:1px solid var(--line)}
+</style>
+<style>
+.tbl{table-layout:fixed;min-width:760px}
+.tbl td.c{font-weight:600;overflow-wrap:anywhere}
+.tbl td,.tbl th{overflow-wrap:break-word}
+.tbl td ul{margin:0;padding-left:16px}
+.tbl td li{margin:0 0 2px}
+.grp td{background:var(--sunken);font:600 10.5px var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.why{color:var(--muted);font-size:13.5px}
+</style>
+
+<header class="top"><div class="top-in">
+  <a class="brand" href="#summary">FlyRank</a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#collections">1 · Collections audit</a>
+    <a href="#nav">2 · Main nav</a>
+    <a href="#noindex">3 · Noindex</a>
+    <a href="#plan">Plan</a>
+  </nav>
+</div></header>
+
+<main>
+<div id="summary">
+  <p class="eyebrow">LoveRaw · Collection pages · SEO strategy &amp; plan</p>
+  <h1>LoveRaw collections: SEO strategy and plan</h1>
+  <p class="lede">LoveRaw sells 25 products and has 28 collections. The plan is to keep fewer, stronger collections in search. The main nav carries product types and gifts. Thin, duplicate, empty and admin collections are kept out of the index. Checked live on 23 November 2026.</p>
+  <div class="stats">
+    <div class="stat"><b>28</b><span>Collections on the site</span></div>
+    <div class="stat"><b>14</b><span>Keep indexed</span></div>
+    <div class="stat"><b>11</b><span>Should be noindex, aren’t now</span></div>
+    <div class="stat"><b>3</b><span>Already noindex</span></div>
+  </div>
+</div>
+
+<section id="collections">
+  <div class="head"><h2>1. All collections and their audit</h2></div>
+  <p class="sub">“Products” is what a visitor sees now, against what’s assigned in Shopify. Character counts for the title (target 30–60) and meta description (target 120–155) are in brackets.</p>
+
+  <div class="wrap"><table class="tbl">
+    <colgroup><col style="width:19%"><col style="width:9%"><col style="width:9%"><col style="width:33%"><col style="width:30%"></colgroup>
+    <thead><tr><th>Collection</th><th>Products</th><th>Index now</th><th>Issues</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr class="grp"><td colspan="5">Keep indexed (14)</td></tr>
+      <tr><td class="c">vegan-chocolate</td><td class="n">25 / 102</td><td class="ok">Yes</td><td><ul><li>Not in nav, even though it’s the main category</li><li>Title slightly long (65)</li><li>FAQs on page without FAQ schema</li></ul></td><td>Add to nav as “Shop all”. Trim the title to ≤ 60.</td></tr>
+      <tr><td class="c">best-sellers</td><td class="n">11 / 21</td><td class="ok">Yes</td><td><ul><li>Default title “Best Sellers – LoveRaw” (22)</li><li>Meta (321) and intro copied from All Products</li><li>Generic H1</li></ul></td><td>Title: “Best-Selling Vegan Chocolate, Spreads &amp; Wafer Bars | LoveRaw”. Write a new meta and intro.</td></tr>
+      <tr><td class="c">vegan-wafer-bars</td><td class="n">5 / 9</td><td class="ok">Yes</td><td><ul><li>Title 62, meta 148: good</li><li>4 retired products still assigned</li></ul></td><td>Remove retired products. Trim the title by 2 characters.</td></tr>
+      <tr><td class="c">vegan-butter-cups</td><td class="n">5 / 11</td><td class="ok">Yes</td><td><ul><li>Title 61, meta 145: good</li><li>6 retired products still assigned</li></ul></td><td>Remove retired products. Add almond butter cups copy here.</td></tr>
+      <tr><td class="c">vegan-spreads</td><td class="n">5 / 5</td><td class="ok">Yes</td><td><ul><li>Title 51: good</li><li>Meta slightly long (162)</li></ul></td><td>Trim the meta. Add hazelnut spread copy and an FAQ, since it covers Hazelnut.</td></tr>
+      <tr><td class="c">mixed-boxes</td><td class="n">5 / 8</td><td class="ok">Yes</td><td><ul><li>Default title (21)</li><li>Meta far too long (317)</li></ul></td><td>Title: “Vegan Chocolate Mixed Boxes &amp; Bundles | LoveRaw”. Meta ≤ 155.</td></tr>
+      <tr><td class="c">vegan-cookies</td><td class="n">8 / 18</td><td class="ok">Yes</td><td><ul><li>Default title (23), no meta, no intro</li><li>Not in nav: the nav links to the kookie-cat duplicate instead</li></ul></td><td>Write a title, meta and intro. Make it the nav’s “Cookies” link.</td></tr>
+      <tr><td class="c">vegan-gifts</td><td class="n bad">1 / 24</td><td class="ok">Yes</td><td><ul><li>Shows only the gift card in peak gifting season</li><li>Not in nav</li><li>Short intro (29w)</li></ul></td><td>Fill it with 8+ products now. Add H2 sections for “for her”, “for him” and “birthday”. Add it to the nav.</td></tr>
+      <tr><td class="c">vegan-christmas-gifts</td><td class="n warn">2 / 7</td><td class="ok">Yes</td><td><ul><li>Only 2 products</li><li>H1 “Vegan Christmas Treats” doesn’t match the title (“Gifts”)</li><li>CSS pasted into the description</li></ul></td><td>Fill it now. Change the H1 to “Vegan Christmas Gifts”. Move the CSS into the theme.</td></tr>
+      <tr><td class="c">vegan-halloween-treats</td><td class="n">20+</td><td class="ok">Yes</td><td><ul><li>Seasonal, out of season</li><li>CSS pasted into the description</li></ul></td><td>Keep it indexed all year so it keeps its rankings. Move the CSS into the theme.</td></tr>
+      <tr><td class="c">vegan-milk-chocolate</td><td class="n">7 / 22</td><td class="ok">Yes</td><td><ul><li>Title “GAME CHANGING…” in caps</li><li>FAQ schema is broken JSON</li><li>No internal links</li></ul></td><td>Title: “Vegan Milk Chocolate Bars | Dairy-Free M:lk Choc | LoveRaw”. Fix the FAQ JSON. Link to it from Shop all and from product pages.</td></tr>
+      <tr><td class="c">vegan-white-chocolate</td><td class="n">3 / 7</td><td class="ok">Yes</td><td><ul><li>Meta slightly long (167)</li><li>FAQ schema is broken JSON</li><li>No internal links</li></ul></td><td>Fix the FAQ JSON. Trim the meta. Link to it from Shop all and from product pages.</td></tr>
+      <tr><td class="c">pistachio</td><td class="n warn">1 / 2</td><td class="ok">Yes</td><td><ul><li>Shows 1 product, but 4 pistachio products exist (spread, cups, wafer box, cookie box)</li><li>Default title (19), no meta, no intro, H1 “Pistachio”</li></ul></td><td>Add the 3 missing products. Title: “Vegan Pistachio Chocolate, Spread &amp; Wafers | LoveRaw”. Change the H1 to “Vegan Pistachio Chocolate” and write a meta and intro.</td></tr>
+      <tr><td class="c">peanut</td><td class="n">3 / 10</td><td class="ok">Yes</td><td><ul><li>H1 is just “Peanut”</li><li>CSS in the description</li><li>No internal links</li></ul></td><td>Change the H1 to “Vegan Peanut Butter Chocolate”. Link to it from Butter Cups, Wafer Bars and Cookies.</td></tr>
+
+      <tr class="grp"><td colspan="5">Should be noindex, but can be indexed now (11)</td></tr>
+      <tr><td class="c">all</td><td class="n">20+ / 98</td><td class="bad">Yes</td><td><ul><li>Duplicates vegan-chocolate (canonical already points there)</li><li>Linked as “Shop All” in nav and the announcement bar</li><li>Default title, meta 252 with the typo “mouth-wathering”</li></ul></td><td>Noindex. Move the nav and bar links to vegan-chocolate.</td></tr>
+      <tr><td class="c">kookie-cat</td><td class="n">8 / 18</td><td class="bad">Yes</td><td><ul><li>Same 8 products as vegan-cookies</li><li>Linked as “Cookies” in nav</li><li>No meta, no intro</li></ul></td><td>Noindex. Keep it for brand campaigns.</td></tr>
+      <tr><td class="c">vegan-gifts-for-her</td><td class="n bad">0 / 10</td><td class="bad">Yes</td><td><ul><li>Empty, with no H1</li><li>Meta 210</li></ul></td><td>Noindex, or delete and 301 to vegan-gifts.</td></tr>
+      <tr><td class="c">vegan-gifts-for-him</td><td class="n bad">0 / 11</td><td class="bad">Yes</td><td><ul><li>Empty, with no H1</li><li>Meta 252</li></ul></td><td>Noindex, or delete and 301 to vegan-gifts.</td></tr>
+      <tr><td class="c">hazelnut</td><td class="n warn">2 / 2</td><td class="bad">Yes</td><td><ul><li>Only 2 products, both spreads, so it overlaps Spreads</li><li>H1 is just “Hazelnut”</li></ul></td><td>Noindex. Move the hazelnut copy to Spreads.</td></tr>
+      <tr><td class="c">almond</td><td class="n warn">1 / 2</td><td class="bad">Yes</td><td><ul><li>1 product, which already appears on Butter Cups</li><li>Default title, no meta, no intro</li></ul></td><td>Noindex. Move the copy to Butter Cups.</td></tr>
+      <tr><td class="c">caramel</td><td class="n warn">3 / 18</td><td class="bad">Yes</td><td><ul><li>1 wafer box and 2 cookie boxes, which don’t match the “caramel chocolate” title</li><li>FAQ schema is broken JSON</li></ul></td><td>Noindex. If Search Console shows steady clicks, keep it indexed and rewrite it instead.</td></tr>
+      <tr><td class="c">tesco-products</td><td class="n bad">0 / 3</td><td class="bad">Yes</td><td><ul><li>Empty, with no H1</li><li><code>/pages/stockists-1</code> already covers where to buy</li></ul></td><td>Noindex.</td></tr>
+      <tr><td class="c">merch</td><td class="n bad">0 / 1</td><td class="bad">Yes</td><td><ul><li>Empty, no meta, placeholder social image</li></ul></td><td>Noindex, or delete it.</td></tr>
+      <tr><td class="c">peanut-caramel-bar</td><td class="n bad">0 / 1</td><td class="bad">Yes</td><td><ul><li>Empty; the product is discontinued</li></ul></td><td>Noindex, or delete and 301 to peanut.</td></tr>
+      <tr><td class="c">products-without-a-compare-at-price</td><td class="n bad">0 / 0</td><td class="bad">Yes</td><td><ul><li>Admin collection used for discount logic</li></ul></td><td>Noindex.</td></tr>
+
+      <tr class="grp"><td colspan="5">Already noindex (3)</td></tr>
+      <tr><td class="c">full-price-items</td><td class="n">20+ / 97</td><td class="ok">noindex</td><td><ul><li>Admin collection, still in the sitemap</li></ul></td><td>Switch to <code>seo.hidden</code> to drop it from the sitemap.</td></tr>
+      <tr><td class="c">vegan-birthday-chocolate</td><td class="n bad">0 / 9</td><td class="ok">noindex</td><td><ul><li>Empty, still in the sitemap</li></ul></td><td>Keep noindex and switch to <code>seo.hidden</code>, or delete and 301 to vegan-gifts.</td></tr>
+      <tr><td class="c">vegan-easter-gifts</td><td class="n bad">0 / 9</td><td class="ok">noindex</td><td><ul><li>Empty, still in the sitemap</li></ul></td><td>Keep noindex and switch to <code>seo.hidden</code>. Index it again only if an Easter range launches.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Issues on every collection (theme template)</h3>
+  <ul class="list">
+    <li><b>Schema:</b> the ItemList uses the invalid property <code>"@numberOfItems"</code> and lists full Product objects instead of <code>ListItem</code> entries with a position. In the breadcrumb, “home” is lowercase and the last item has no URL.</li>
+    <li><b>Headings:</b> every product card, the cart drawer and the footer labels are H2s. Product cards should be H3, and the cart and footer headings should be plain text.</li>
+    <li><b>Social:</b> og:title shows only the collection name, and 8 collections use Shopify’s placeholder image.</li>
+    <li><b>Related content:</b> every collection shows the same 3 blog posts, including the “rescued from administration” press release.</li>
+    <li><b>Broken links:</b> on the homepage, <code>/collections/cre-m-wafer-bar</code> redirects to a 404.</li>
+  </ul>
+</section>
+
+<section id="nav">
+  <div class="head"><h2>2. What goes in the main nav, and why</h2></div>
+  <p class="sub">Links in the main nav appear on every page, so they carry the most internal link weight. They should go to the collections that are bigger, sell more and match the main searches. Today 2 of the 7 nav links point to duplicate collections that shouldn’t rank.</p>
+
+  <div class="wrap"><table class="tbl">
+    <colgroup><col style="width:16%"><col style="width:20%"><col style="width:16%"><col style="width:48%"></colgroup>
+    <thead><tr><th>Nav link</th><th>Goes to</th><th>Change</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr class="grp"><td colspan="4">Shop</td></tr>
+      <tr><td class="c">Shop all</td><td><code>vegan-chocolate</code></td><td class="warn">Was <code>all</code></td><td class="why">The main category page for “vegan chocolate”, with all 25 live products. <code>all</code> is a duplicate that points its canonical here, so linking to it wastes the strongest link on the site.</td></tr>
+      <tr><td class="c">Bestsellers</td><td><code>best-sellers</code></td><td class="ok">Keep</td><td class="why">The main shopping path for new visitors, and a strong page for converting them.</td></tr>
+      <tr><td class="c">Wafer Bars</td><td><code>vegan-wafer-bars</code></td><td class="ok">Keep</td><td class="why">A core product type with its own search demand (“vegan wafer bars”).</td></tr>
+      <tr><td class="c">Butter Cups</td><td><code>vegan-butter-cups</code></td><td class="ok">Keep</td><td class="why">A core product type (“vegan peanut butter cups”). Also covers almond.</td></tr>
+      <tr><td class="c">Spreads</td><td><code>vegan-spreads</code></td><td class="ok">Keep</td><td class="why">A core product type (“vegan chocolate spread”, “vegan nutella”). Also covers hazelnut.</td></tr>
+      <tr><td class="c">Cookies</td><td><code>vegan-cookies</code></td><td class="warn">Was <code>kookie-cat</code></td><td class="why">Same 8 products, but “vegan cookies” is the term people search for. Kookie Cat is the duplicate brand page.</td></tr>
+      <tr><td class="c">Mixed Boxes</td><td><code>mixed-boxes</code></td><td class="ok">Keep</td><td class="why">The bundle and gift-box entry point, with good average order value.</td></tr>
+      <tr class="grp"><td colspan="4">Gifts (new)</td></tr>
+      <tr><td class="c">Christmas Gifts</td><td><code>vegan-christmas-gifts</code></td><td class="bad">Add</td><td class="why">Peak demand from November to December. Swap it for Halloween in October, and leave the slot empty or show Gift Cards for the rest of the year.</td></tr>
+      <tr><td class="c">All Vegan Gifts</td><td><code>vegan-gifts</code></td><td class="bad">Add</td><td class="why">Year-round “vegan gifts” searches. It replaces the empty Her, Him and Birthday pages, using a section on the page for each.</td></tr>
+      <tr><td class="c">Gift Cards</td><td><code>/products/gift-card</code></td><td class="ok">Keep</td><td class="why">Already in the nav. It fits better under Gifts.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Flavours: a filter for shoppers, plus 2 landing pages for search</h3>
+  <ul class="list fix">
+    <li><b>Add a Flavour filter</b> to every collection, next to the current Availability, Brand and Price filters. Use Shopify Search &amp; Discovery with a product metafield <code>custom.flavour</code> (a list, because some products have two flavours, like Salted Peanut Caramel). Values: Pistachio, Peanut, Hazelnut, Almond, Caramel, White Chocolate, Milk Chocolate, Double Chocolate, Vanilla, Berry, Spiced Orange.</li>
+    <li><b>The filter is for shoppers, not for search.</b> Filter URLs (<code>?filter.p.m.custom.flavour=…</code>) canonicalise to the collection, so they don’t rank. This works for flavours with little search demand, like Hazelnut, Almond and Caramel, which is why those three collections can be noindexed.</li>
+    <li><b>Keep Pistachio and Peanut as indexed collections.</b> They have real search demand (“vegan pistachio chocolate”, “vegan peanut butter chocolate”), and each has 3–4 products. A filter can’t rank for those searches; a collection page can. Milk and White Chocolate stay indexed for the same reason.</li>
+    <li><b>Keep filter URLs out of the index.</b> Leave the self-canonical in place. Shopify’s default <code>robots.txt</code> already blocks URLs that combine several filters.</li>
+  </ul>
+
+  <h3>Indexed but left out of the nav</h3>
+  <ul class="list fix">
+    <li><b>Milk Chocolate, White Chocolate, Pistachio, Peanut:</b> these have their own search demand but only 3–7 products, and they overlap the product-type pages. Adding them would double the size of the nav. Instead, link to them from a “Shop by type &amp; flavour” row at the top of Shop all, from related product-type pages, and from product pages (for example, Pistachio Bliss links to Spreads and Pistachio).</li>
+    <li><b>Halloween:</b> it goes in the Gifts slot in October only. The rest of the year, link to it from Vegan Gifts.</li>
+    <li><b>Footer:</b> add a Shop column with Shop all, Wafer Bars, Butter Cups, Spreads and Vegan Gifts. The footer has no shop links today.</li>
+  </ul>
+</section>
+
+<section id="noindex">
+  <div class="head"><h2>3. Should be noindex, but isn’t now</h2><span class="badge crit">11 collections</span></div>
+  <p class="sub">Checked against the live HTML and response headers with caching bypassed. All 11 have no robots tag today and are all in <code>sitemap.xml</code>.</p>
+  <div class="wrap"><table class="tbl">
+    <colgroup><col style="width:28%"><col style="width:47%"><col style="width:25%"></colgroup>
+    <thead><tr><th>Collection</th><th>Reason</th><th>Linked from nav now</th></tr></thead>
+    <tbody>
+      <tr><td class="c">all</td><td>Duplicates vegan-chocolate</td><td class="bad">Yes (Shop All, announcement bar)</td></tr>
+      <tr><td class="c">kookie-cat</td><td>Duplicates vegan-cookies</td><td class="bad">Yes (Cookies)</td></tr>
+      <tr><td class="c">vegan-gifts-for-her</td><td>Empty</td><td>No</td></tr>
+      <tr><td class="c">vegan-gifts-for-him</td><td>Empty</td><td>No</td></tr>
+      <tr><td class="c">tesco-products</td><td>Empty, and covered by the Stockists page</td><td>No</td></tr>
+      <tr><td class="c">merch</td><td>Empty</td><td>No</td></tr>
+      <tr><td class="c">peanut-caramel-bar</td><td>Empty; product discontinued</td><td>No</td></tr>
+      <tr><td class="c">products-without-a-compare-at-price</td><td>Admin collection</td><td>No</td></tr>
+      <tr><td class="c">hazelnut</td><td>Thin (2 products), and overlaps Spreads. Shoppers can use the Flavour filter instead.</td><td>No</td></tr>
+      <tr><td class="c">almond</td><td>Thin (1 product), and overlaps Butter Cups. Shoppers can use the Flavour filter instead.</td><td>No</td></tr>
+      <tr><td class="c">caramel</td><td>Thin, and the products don’t match the page topic. Shoppers can use the Flavour filter instead.</td><td>No</td></tr>
+    </tbody>
+  </table></div>
+  <h3>How to apply noindex</h3>
+  <ul class="list fix">
+    <li>In Shopify, add the collection metafield <code>seo.hidden</code> (integer, value <code>1</code>). This adds <code>noindex</code> and also drops the page from <code>sitemap.xml</code>. Do the same for the 3 collections that are already noindex, because the noindex they have today leaves them in the sitemap.</li>
+    <li>For <code>all</code>, change the canonical back to the page’s own URL. A noindex together with a canonical to another page sends mixed signals.</li>
+    <li>Don’t block these URLs in <code>robots.txt</code>. Google has to crawl the page to see the noindex.</li>
+    <li>Before you noindex Hazelnut, Almond and Caramel, check Search Console. If a page has had steady clicks over the last 12 months, keep it indexed and improve it instead.</li>
+  </ul>
+</section>
+
+<section id="plan">
+  <div class="head"><h2>Plan</h2><span class="badge high">In priority order</span></div>
+  <p class="sub">Steps 1–3 should go live before mid-December.</p>
+  <ol class="steps">
+    <li><b>Fill Vegan Gifts and Christmas</b> with published products. Add the 3 missing products to Pistachio.</li>
+    <li><b>Update the main nav:</b> Shop all → vegan-chocolate, Cookies → vegan-cookies, and a new Gifts group. Change the announcement bar link too.</li>
+    <li><b>Apply <code>seo.hidden</code></b> to the 11 collections in section 3 and the 3 that are already noindex. Fix the canonical on <code>all</code>.</li>
+    <li><b>Fix the broken homepage link</b> and add links in content: a type and flavour row on Shop all, related collections on type pages, collection links on product pages, and a Shop column in the footer.</li>
+    <li><b>Add the Flavour filter:</b> create the <code>custom.flavour</code> metafield, tag all 25 products with their flavours, and turn the filter on in Search &amp; Discovery.</li>
+    <li><b>Update the metadata</b> for Best Sellers, Mixed Boxes, Vegan Cookies, Pistachio, Milk Chocolate and Christmas (section 1).</li>
+    <li><b>Fix the theme template:</b> ItemList and breadcrumb schema, FAQ JSON, heading levels and og tags.</li>
+    <li><b>Submit the sitemap again</b> in Search Console. Check that the noindexed pages drop out of the index within 2–4 weeks.</li>
+  </ol>
+</section>
+</main>
+<footer>FlyRank · LoveRaw collections SEO strategy · Checked live on 23 November 2026 (28 collections, main nav, footer, homepage, sitemap)</footer>
+
+</body></html>
