@@ -1,0 +1,320 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>111Journal Blog & Article Audit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Manrope:wght@600;700&display=swap">
+<style>
+/* Layout: FlyRank audit system. Fixed dark top bar with section nav, wide single column, one section per part with tables */
+:root{
+--mint:#54e399;--mint-light:#7eefc1;--mint-dark:#1a7a4a;--mint-wash:#e3f7ec;
+--amber:#e8a13a;--amber-wash:#fbf0dd;--amber-dark:#8a5a12;
+--red:#d9583f;--red-wash:#fbe6e1;--red-dark:#a33a25;
+--ink:#051f21;--bar:#051f21;--bar-text:#c4d2cd;--paper:#f6f9f8;--card:#fff;--sunken:#edf2f0;--line:#dfe6e4;--muted:#56696a;--faint:#7b8d8c;--link:#1a7a4a;--note:#f0f7f3;
+--sans:Geist,"Helvetica Neue",Arial,sans-serif;--label:Manrope,Arial,sans-serif;
+--col:1120px;color-scheme:light;
+}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 var(--sans)}
+a{color:inherit;text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--mint-dark);outline-offset:3px;border-radius:4px}
+code{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--sunken);border:1px solid var(--line);border-radius:4px;padding:0 4px;overflow-wrap:anywhere}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bar)}
+.top{position:fixed;top:0;left:0;right:0;padding-top:env(safe-area-inset-top,0px);z-index:20;background:var(--bar);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.top-in{max-width:calc(var(--col) + 32px);margin:auto;height:64px;display:flex;align-items:center;gap:32px;box-sizing:border-box;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.brand{font-weight:700;font-size:20px;letter-spacing:-.04em;text-decoration:none;flex:0 0 auto;color:#fff}
+.nav{display:flex;justify-content:flex-end;margin-left:auto;gap:2px;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1 1 0%}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;font-size:13px;color:var(--bar-text);text-decoration:none;padding:7px 11px;border-radius:999px;transition:background .15s,color .15s}
+.nav a:hover,.nav a.active{background:rgba(84,227,153,.12);color:var(--mint-light)}
+@media(max-width:860px){.top-in{gap:16px}.nav{justify-content:flex-start}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.nav a{transition:none}}
+
+main{max-width:calc(var(--col) + 32px);margin:0 auto;box-sizing:border-box;padding-top:calc(64px + 56px + env(safe-area-inset-top,0px));padding-bottom:80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font:600 10.5px var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 6px}
+h1{font-size:34px;line-height:1.15;letter-spacing:-.025em;font-weight:500;margin:0 0 12px;text-wrap:balance}
+.lede{color:var(--muted);font-size:16px;margin:0 0 16px;max-width:720px}
+@media(max-width:600px){h1{font-size:28px}}
+
+section{padding:48px 0 8px;border-top:1px solid var(--line);margin-top:48px}
+.head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 4px}
+h2{font-size:24px;line-height:1.25;letter-spacing:-.02em;font-weight:500;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 20px;max-width:760px}
+.sub b{color:var(--ink);font-weight:600}
+h3{font-size:17px;font-weight:500;margin:36px 0 6px;display:flex;gap:10px;align-items:baseline;text-wrap:balance}
+h3 + .sub{margin-bottom:14px;font-size:14.5px}
+.count-pill{font:700 10px var(--label);letter-spacing:.08em;padding:3px 9px;border-radius:999px;background:var(--sunken);color:var(--muted);border:1px solid var(--line)}
+
+.note{background:var(--note);border:1px solid var(--line);border-left:3px solid var(--mint);border-radius:8px;padding:12px 16px;margin:0 0 20px;font-size:14.5px;max-width:860px}
+.note b{font-weight:600}
+.note p{margin:0 0 8px}.note p:last-child{margin:0}
+
+.score{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:640px;margin:8px 0 0}
+.score div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.score b{display:block;font-size:28px;font-weight:500;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.2}
+.score span{font:600 10.5px var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.score .s-pass b{color:var(--mint-dark)}.score .s-part b{color:var(--amber-dark)}.score .s-fail b{color:var(--red-dark)}
+
+.wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--line);background:var(--card)}
+.tbl{width:100%;min-width:720px;border-collapse:collapse;font-size:14.5px;line-height:1.6}
+.tbl th,.tbl td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.tbl th{font:600 10.5px var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--faint);background:var(--sunken);white-space:nowrap}
+.tbl td.n{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--faint)}
+.tbl td.rule{font-weight:500;white-space:nowrap}
+.tbl td.nowrap{white-space:nowrap}
+.tbl ul{margin:0;padding-left:18px}
+.tbl li{margin:0 0 2px}
+.col-n{width:36px}.col-rule{width:170px}.col-st{width:90px}.col-pass{width:84px}.col-sev{width:90px}.col-where{width:150px}
+.tbl th.r{text-align:right}
+.tbl td.num{color:var(--ink)}
+.tbl td.num.bad{color:var(--red-dark);font-weight:600}
+.tbl td.post a{font-weight:500;color:var(--link)}
+.pt{min-width:1080px;font-size:14px}
+.pt th,.pt td{padding:10px 12px}
+.pt td.post{min-width:220px}
+.pt td.iss{color:var(--muted);min-width:260px}
+.score-group{display:grid;gap:6px;margin:0 0 18px}
+.score-group > span{font:600 10.5px var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+.badge{font:600 10.5px var(--label);letter-spacing:.04em;padding:3px 9px;border-radius:999px;background:var(--sunken);color:var(--muted);border:1px solid var(--line);white-space:nowrap;display:inline-block}
+.badge.pass{background:var(--mint-wash);color:var(--mint-dark);border-color:transparent}
+.badge.part{background:var(--amber-wash);color:var(--amber-dark);border-color:transparent}
+.badge.fail{background:var(--red-wash);color:var(--red-dark);border-color:transparent}
+.badge.new{background:var(--bar);color:#fff;border-color:var(--bar)}
+.badge.new b{color:var(--mint);font-weight:700}
+
+.concl{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.concl li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:14.5px}
+.concl li b{font-weight:600}
+.concl .meta{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 6px}
+
+footer{max-width:var(--col);margin:0 auto;padding-block:24px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));color:var(--faint);font-size:13px;border-top:1px solid var(--line)}
+</style>
+
+<header class="top"><div class="top-in"><a class="brand" href="#top">FlyRank</a>
+<nav class="nav" aria-label="Sections"><a href="#summary">Summary</a><a href="#audit">Blog index</a><a href="#findings">Index findings</a><a href="#articles">Articles</a><a href="#posts">Per post</a><a href="#ux">UX/UI</a><a href="#fixes">Priority fixes</a></nav>
+</div></header>
+
+<main id="top">
+<p class="eyebrow">111SKIN · SEO audit</p>
+<h1>111Journal Blog &amp; Article Audit</h1>
+<p class="lede">We did a technical and on-page SEO audit of the <a href="https://111skin.com/blogs/111journal">/blogs/111journal</a> blog index page and its articles. The index shows 51 article cards, but 5 of them repeat, so we audited 46 articles. We also flagged UX and UI issues we found along the way.</p>
+
+<section id="summary" style="border-top:0;margin-top:8px;padding-top:24px">
+<div class="head"><h2>Summary</h2><span class="count-pill">31 RULES</span></div>
+<p class="sub">Every page is crawlable, indexable and correctly canonicalised. The problems are in structure, trust signals and links. The index has no working pagination and its cards have no excerpts, dates or authors. The articles have incomplete or missing <code>Article</code> schema, "111SKIN Store" as the author, no breadcrumbs, and broken CTAs and product links.</p>
+<div class="note"><p><b>Biggest issues:</b> <code>?page=2</code> of the blog index is a duplicate of page 1. 12 posts have a CTA that links to <code>undefined</code>, and 17 posts link to removed products that now redirect to the homepage.</p></div>
+
+</section>
+
+<section id="audit">
+<div class="head"><h2>Blog index by rule</h2><span class="count-pill">BLOG INDEX</span></div>
+<p class="sub">Each rule from the Blog Index checklist, with the result and what we found on the page.</p>
+<div class="wrap"><table class="tbl">
+<colgroup><col class="col-n"><col class="col-rule"><col class="col-st"><col></colgroup>
+<thead><tr><th>#</th><th>Rule</th><th>Result</th><th>Finding</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td class="rule">Meta title</td><td><span class="badge pass">Pass</span></td><td>"The 111Journal: Skincare, Ingredients &amp; Wellness | 111SKIN" is 58 characters. Page 2 adds "– Page 2", so its title is different.</td></tr>
+<tr><td class="n">2</td><td class="rule">Meta description</td><td><span class="badge part">Partial</span></td><td>133 characters, which is under the 140 minimum. The text itself is fine and isn't cut off.</td></tr>
+<tr><td class="n">3</td><td class="rule">Canonical tag</td><td><span class="badge pass">Pass</span></td><td>One absolute canonical that points to itself. Page 2 also points to itself.</td></tr>
+<tr><td class="n">4</td><td class="rule">URL</td><td><span class="badge pass">Pass</span></td><td><code>/en-eu/blogs/111journal</code> has no IDs or parameters and is two levels deep.</td></tr>
+<tr><td class="n">5</td><td class="rule">Blog schema</td><td><span class="badge fail">Fail</span></td><td><ul><li>The only structured data is an <code>Organization</code> block.</li><li>No <code>Blog</code> or <code>CollectionPage</code> schema and no list of posts.</li><li><code>Organization.sameAs</code> has 8 empty strings out of 11 entries.</li></ul></td></tr>
+<tr><td class="n">6</td><td class="rule">Breadcrumbs</td><td><span class="badge fail">Fail</span></td><td>No visible breadcrumb trail and no <code>BreadcrumbList</code> schema.</td></tr>
+<tr><td class="n">7</td><td class="rule">Blog title (H1)</td><td><span class="badge pass">Pass</span></td><td>Exactly one H1, "JOURNAL POSTS". It's generic, though. "The 111Journal" would carry the brand and the topic.</td></tr>
+<tr><td class="n">8</td><td class="rule">Blog description</td><td><span class="badge fail">Fail</span></td><td>No intro copy. The H1 sits alone in an image banner, so the page has 0 words against the 50 required.</td></tr>
+<tr><td class="n">9</td><td class="rule">Heading hierarchy</td><td><span class="badge fail">Fail</span></td><td><ul><li>Eight H2s from the announcement bar ("20% Savings, Plus Exclusive Gifts", "Holiday Gift Guide"), plus "Currency" and an H3 "Cart 0", come before the H1.</li><li>The cart error message is an H5, which skips H4.</li><li>Post titles are H2s, but they are cut off with "..." in the HTML itself.</li></ul></td></tr>
+<tr><td class="n">10</td><td class="rule">Search bar</td><td><span class="badge fail">Fail</span></td><td>The header search form goes to <code>/en-eu/search</code> and that page returns 200, but <b>it only searches products</b>. Readers can't use it to find journal articles, and the blog has no search of its own.</td></tr>
+<tr><td class="n">11</td><td class="rule">Featured post</td><td><span class="badge fail">Fail</span></td><td>No separate lead post above the grid. The page goes straight from the banner to the grid.</td></tr>
+<tr><td class="n">12</td><td class="rule">Article cards</td><td><span class="badge fail">Fail</span></td><td><ul><li>All 51 cards are in the raw HTML, and their titles are real links.</li><li><b>No card has an excerpt or a publish date.</b> Cards show only an image, a tag, a cut-off title and "Read more".</li><li><b>No card names an author.</b> This also misses a chance to show the expertise behind the posts, for example Dr Yannis and guest experts.</li><li>5 posts appear twice (Bridal Skin Timeline, Rapid Weight Loss, Dr Yannis' 2026 predictions, Oil Cleansing, Niacinamide for Pores), so the 51 cards show 46 posts.</li></ul></td></tr>
+<tr><td class="n">13</td><td class="rule">Optimized images</td><td><span class="badge part">Partial</span></td><td><ul><li>Every image has a width and height, and cards below the fold load lazily.</li><li><b>35 of the 51 card images have no alt text</b> (63 of 108 images on the whole page).</li><li>Some file names are generic, such as <code>Screenshot_2024-10-23_154521.png</code>, <code>untitled-design_…jpg</code> and <code>img-1743096783599.jpg</code>.</li></ul></td></tr>
+<tr><td class="n">14</td><td class="rule">Pagination</td><td><span class="badge fail">Fail</span></td><td><ul><li>There are no links to further pages anywhere in the HTML.</li><li><code>?page=2</code> returns 200 with exactly the same 46 posts as page 1, and points its canonical to itself.</li><li>That makes it a duplicate page that Google can index, and Google has no link to any posts beyond the first page.</li></ul></td></tr>
+<tr><td class="n">15</td><td class="rule">Indexability &amp; social</td><td><span class="badge pass">Pass</span></td><td><ul><li>No <code>noindex</code>, robots.txt allows <code>/blogs/</code>, and the page is listed in <code>sitemap_blogs_1.xml</code>.</li><li><code>og:title</code>, <code>og:description</code>, <code>og:image</code> (1260×800) and <code>twitter:card</code> are all present.</li><li>Minor points: <code>og:image</code> uses <code>http://</code>, and <code>twitter:image</code> is empty.</li></ul></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="findings">
+<div class="head"><h2>Other blog index findings</h2><span class="count-pill">2 ISSUES</span></div>
+<p class="sub">Problems we found during manual review that the rules don't cover directly, or that add to a rule above.</p>
+<div class="wrap"><table class="tbl">
+<colgroup><col class="col-rule"><col></colgroup>
+<thead><tr><th>Issue</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><td class="rule">Duplicate "Wellness" tab</td><td>The category tabs show both "wellness" and "Wellness". Both use <code>data-tag="wellness"</code> and show the same posts. The two spellings come from inconsistent tags on the articles in Shopify.</td></tr>
+<tr><td class="rule">No "View all" link per tab</td><td>The tabs (Latest Stories, Wellness, Skin School, Ingredients, Treatments) are <code>&lt;button&gt;</code> elements that filter the grid on the page, and none of them has a crawlable link. The buttons can stay as they are, but each tab needs a "View all" link (<code>&lt;a href&gt;</code>) to its blog page. Without one, search engines can't find those pages from here.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="articles">
+<div class="head"><h2>Article pages by rule</h2><span class="count-pill">46 POSTS</span></div>
+<p class="sub">Every post linked from the blog index, checked against the 16 Article Page rules. "Passing" is the number of posts that meet the rule.</p>
+<div class="note"><p><b>Two templates:</b> 8 newer posts (1–7 and 43 in the table below) use a newer article layout with a header, a "Written by" line and a product carousel. The other 38 posts use the older theme layout. The two layouts differ in schema, dates, image markup and design, so many issues only affect one group.</p></div>
+<div class="wrap"><table class="tbl">
+<colgroup><col class="col-n"><col class="col-rule"><col class="col-pass"><col class="col-st"><col></colgroup>
+<thead><tr><th>#</th><th>Rule</th><th>Passing</th><th>Result</th><th>Finding</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td class="rule">Meta title</td><td class="n num">16 / 46</td><td><span class="badge fail">Fail</span></td><td><ul><li>30 titles are outside 50–60 characters: 23 are too long and 7 are too short.</li><li>The longest is "Choosing The Right Cleanser For You" (post 18) at 113 characters. The shortest is "FTA Journal" (post 13) at 30.</li><li>No duplicate titles.</li></ul></td></tr>
+<tr><td class="n">2</td><td class="rule">Meta description</td><td class="n num">30 / 46</td><td><span class="badge part">Partial</span></td><td><ul><li>16 descriptions are outside 140–160 characters. Post 28's is 320 characters, and post 13's is 90.</li><li>No duplicates. One description is a copy of the article's first sentence.</li></ul></td></tr>
+<tr><td class="n">3</td><td class="rule">Canonical tag</td><td class="n num">46 / 46</td><td><span class="badge pass">Pass</span></td><td>Every post has one absolute canonical tag that points to itself.</td></tr>
+<tr><td class="n">4</td><td class="rule">URL</td><td class="n num">45 / 46</td><td><span class="badge part">Partial</span></td><td>All slugs are lowercase and hyphenated. Post 28's slug ends with a stray number: <code>…for-maximum-efficacy1</code>.</td></tr>
+<tr><td class="n">5</td><td class="rule">Article schema</td><td class="n num">0 / 46</td><td><span class="badge fail">Fail</span></td><td><ul><li><b>8 posts have no <code>Article</code> schema at all.</b> These are the posts on the newer layout (1–7, 43).</li><li>None of the other 38 has <code>dateModified</code>, and no <code>author</code> has a <code>url</code>.</li><li>In 34 of those 38, the schema author is "111SKIN Store" rather than a person.</li><li>In 3 posts the <code>headline</code> doesn't match the H1 (posts 25, 30, 34). Post 36's headline is 108 characters, just under the 110 limit.</li></ul></td></tr>
+<tr><td class="n">6</td><td class="rule">Breadcrumbs</td><td class="n num">0 / 46</td><td><span class="badge fail">Fail</span></td><td>No post has a visible breadcrumb trail or <code>BreadcrumbList</code> schema. The only route back is a small "← Go back" link on the newer layout.</td></tr>
+<tr><td class="n">7</td><td class="rule">Title and excerpt</td><td class="n num">0 / 46</td><td><span class="badge fail">Fail</span></td><td><ul><li>No post has a summary or dek under the H1.</li><li><b>10 posts have more than one H1</b>, because body headings are marked up as H1: posts 9, 18 (4 H1s), 19, 22, 23, 26, 29, 32 (3), 35, 46 (3).</li></ul></td></tr>
+<tr><td class="n">8</td><td class="rule">Published and updated dates</td><td class="n num">0 / 46</td><td><span class="badge fail">Fail</span></td><td><ul><li>23 posts show no date at all. These are mostly the older large-pores, holiday and interview posts.</li><li>No post has <code>dateModified</code> in its schema.</li><li>13 posts show a different date than the schema <code>datePublished</code>. For example, post 20 shows May 29, 2025 but its schema says March 5, 2025, and post 15 shows September 20, 2025 against December 8, 2025.</li></ul></td></tr>
+<tr><td class="n">9</td><td class="rule">Featured image</td><td class="n num">38 / 46</td><td><span class="badge part">Partial</span></td><td>Every featured image has alt text and loads eagerly. On the 8 newer-layout posts, the featured image has no <code>width</code> or <code>height</code>.</td></tr>
+<tr><td class="n">10</td><td class="rule">Heading hierarchy</td><td class="n num">21 / 46</td><td><span class="badge fail">Fail</span></td><td><ul><li>16 posts skip a heading level. Post 1 goes from the H1 straight to H5 "Step 1: Cleanse", and post 8 opens with an H6.</li><li>6 posts have no H2 at all: posts 1, 6, 7, 13, 37, 43.</li><li>7 posts have empty headings. Post 31 has 12 and post 27 has 9.</li></ul></td></tr>
+<tr><td class="n">11</td><td class="rule">Table of contents</td><td class="n num">37 / 46</td><td><span class="badge part">Partial</span></td><td><ul><li>16 posts have a table of contents with anchor links.</li><li>In 3 of them, some anchors point to IDs that don't exist: post 3 (2 anchors), post 5 (1) and post 23 (1).</li><li>6 long-form posts (over 1,200 words) have no table of contents: posts 14, 18, 20, 34, 38, 45.</li></ul></td></tr>
+<tr><td class="n">12</td><td class="rule">Promotion block (CTA)</td><td class="n num">25 / 46</td><td><span class="badge fail">Fail</span></td><td><ul><li><b>12 posts have a CTA with <code>href="undefined"</code>.</b> On posts 1–7, 16 and 39 it's the "Discover our bestsellers" button, so it sends readers to a 404.</li><li>Posts 28, 29 and 41 have a link whose <code>href</code> and text both read "undefined".</li><li>9 posts have no CTA at all: posts 9–14, 37, 38, 45.</li></ul></td></tr>
+<tr><td class="n">13</td><td class="rule">Author byline</td><td class="n num">0 / 46</td><td><span class="badge fail">Fail</span></td><td><ul><li>No byline links to an author page.</li><li>Most posts say "Written by: 111SKIN Store" or "By 111SKIN Store", even guest-expert pieces. Post 1, for example, is Sean Garrette's routine.</li><li>The "Words approved by Dr Yannis Alexandrides" box links to his bio, but it isn't in the schema and isn't the byline.</li></ul></td></tr>
+<tr><td class="n">14</td><td class="rule">Related posts</td><td class="n num">34 / 46</td><td><span class="badge part">Partial</span></td><td>12 posts have no related-article links: posts 12, 13, 14, 33–38, 43, 44, 45. None of the related links points back to the current post.</td></tr>
+<tr><td class="n">15</td><td class="rule">Body content</td><td class="n num">30 / 46</td><td><span class="badge part">Partial</span></td><td><ul><li>14 posts are under 600 words. Post 37 is a video with 83 words, and post 13 has 289.</li><li>4 posts have fewer than 2 internal links in the body text: posts 11, 33, 37, 45.</li><li>All content is in the raw HTML. We didn't run a near-duplicate check, but the 7 large-pores posts cover very similar ground.</li></ul></td></tr>
+<tr><td class="n">16</td><td class="rule">Indexability &amp; social</td><td class="n num">46 / 46</td><td><span class="badge pass">Pass</span></td><td>No post is <code>noindex</code>, all 46 are in the articles sitemap, and all have <code>og:type=article</code>, <code>og:title</code>, <code>og:description</code>, <code>og:image</code> and <code>twitter:card</code>.</td></tr>
+</tbody></table></div>
+
+<h3>Other article findings</h3>
+<p class="sub">Link and image problems the rules cover only indirectly.</p>
+<div class="wrap"><table class="tbl">
+<colgroup><col class="col-rule"><col></colgroup>
+<thead><tr><th>Issue</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><td class="rule">Links to removed products</td><td>13 product URLs now redirect to the homepage, and 17 posts link to at least one of them. Examples are <code>sunscreen-spf-50</code>, <code>rose-gold-radiance-booster</code>, <code>ultimate-nacy2-complex-supplement</code>, <code>anti-blemish-duo</code> and <code>vitamin-c-brightening-cleanser-old</code>. Posts 1 and 16 have 3 each.</td></tr>
+<tr><td class="rule">Links to deleted articles</td><td><code>exfoliation-for-your-skin-type</code> redirects to the blog index. <code>everything-you-need-to-know-about-exosomes-in-skincare</code> redirects to a product page.</td></tr>
+<tr><td class="rule">"-old" product URLs</td><td>8 posts (1, 2, 27–31, 34) link to products whose URL ends in <code>-old</code>. Some of these still redirect to the current product, and some go to the homepage.</td></tr>
+<tr><td class="rule">Links without a locale prefix</td><td>54 internal links use <code>/products/…</code> or <code>/blogs/…</code> without <code>/en-eu</code>, so each one adds an extra redirect.</td></tr>
+<tr><td class="rule">Inline image alt text</td><td>Most inline images have no alt text. Post 1 is missing it on 24 of 25 images, and 3 of its images have <code>alt="undefined"</code>. Almost no inline image has <code>width</code> and <code>height</code> (posts 14 and 45 are the exceptions). Some file names are generic, such as <code>Screenshot_…</code>, <code>untitled-design_…</code> and <code>grey_png.png</code>.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="posts">
+<div class="head"><h2>Results per post</h2><span class="count-pill">46 POSTS</span></div>
+<p class="sub">Key metrics for each post, in the order they appear on the blog index. Values in red fail a rule. The first column links to the live post.</p>
+<div class="wrap"><table class="tbl pt">
+<thead><tr><th>#</th><th>Post</th><th class="r">Title</th><th class="r">Desc.</th><th class="r">Words</th><th class="r">H1s</th><th>Schema</th><th>Date shown</th><th class="r">Related</th><th>Main issues</th></tr></thead>
+<tbody id="post-rows"></tbody></table></div>
+</section>
+
+<section id="ux">
+<div class="head"><h2>UX and UI issues</h2><span class="count-pill">12 ISSUES</span></div>
+<p class="sub">Problems we saw while reading the posts on desktop. They're ordered by how much they hurt readers, with the worst first.</p>
+<div class="wrap"><table class="tbl">
+<colgroup><col class="col-sev"><col class="col-rule"><col><col class="col-where"></colgroup>
+<thead><tr><th>Severity</th><th>Issue</th><th>What we saw</th><th>Where</th></tr></thead>
+<tbody>
+<tr><td><span class="badge fail">High</span></td><td class="rule">Broken bestsellers button</td><td>The "Ready to elevate your skincare game? / Discover our bestsellers" box is the main CTA on the newer layout, but the button links to <code>undefined</code> and sends readers to a 404.</td><td>Posts 1–7, 16, 39</td></tr>
+<tr><td><span class="badge fail">High</span></td><td class="rule">Product links that land on the homepage</td><td>Readers who click a product in the article end up on the homepage with no explanation, because the product was removed.</td><td>17 posts</td></tr>
+<tr><td><span class="badge fail">High</span></td><td class="rule">Two different article designs</td><td>The newer and older layouts differ in title size, byline placement, date format, heading styles, related-posts block and footer CTA. The journal reads like two different sites.</td><td>All posts</td></tr>
+<tr><td><span class="badge part">Medium</span></td><td class="rule">Weak, tiny byline</td><td>"Written by: 111SKIN Store" is set in very small type under the title, and it names a shop instead of a person. The expert credibility only appears at the bottom, in the Dr Yannis box.</td><td>All posts</td></tr>
+<tr><td><span class="badge part">Medium</span></td><td class="rule">No date on older posts</td><td>Readers can't tell whether advice is current. On the newer layout the date sits below the hero image, far from the title.</td><td>23 posts</td></tr>
+<tr><td><span class="badge part">Medium</span></td><td class="rule">Headings sized out of order</td><td>"Related readings" is set larger than the article title. Step headings (H5) are styled as large display text, while numbered headings like "1. Cleanse thoroughly…" are small grey caps. Size doesn't match importance.</td><td>Posts 1–7, 31, 43 and others</td></tr>
+<tr><td><span class="badge part">Medium</span></td><td class="rule">Large empty areas in the layout</td><td>The alternating text and image blocks leave a short paragraph next to a tall image, so half the screen is empty. Readers have to scroll far to get through little text.</td><td>Posts 1, 31 and most step-by-step posts</td></tr>
+<tr><td><span class="badge part">Medium</span></td><td class="rule">Prev/next go to the same post</td><td>On the older layout, the previous and next arrows both point to the same article. They're also tiny arrows with no labels.</td><td>Posts 24–27, 44</td></tr>
+<tr><td><span class="badge">Low</span></td><td class="rule">Content not aligned</td><td>Some numbered sections start further left than the rest of the article body (for example "3. Incorporate serums…"), so the left edge is ragged.</td><td>Older large-pores posts</td></tr>
+<tr><td><span class="badge">Low</span></td><td class="rule">Inconsistent link styling</td><td>Some product links in the body are underlined and some aren't. Some product names, such as "Black Diamond Face" masks in post 1, aren't linked at all.</td><td>Posts 1–7</td></tr>
+<tr><td><span class="badge">Low</span></td><td class="rule">"Explore more" looks empty</td><td>The "Explore more from 111SKIN" block fades in on scroll, and it shows as a large blank grey area until the animation runs.</td><td>Older layout</td></tr>
+<tr><td><span class="badge">Low</span></td><td class="rule">Video-only and very short posts</td><td>Post 37 is just a video with 83 words, and post 13 has 289 words and no headings. Neither gives readers much to read or skim.</td><td>Posts 13, 37</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="fixes">
+<div class="head"><h2>Priority fixes</h2><span class="count-pill">IN ORDER</span></div>
+<p class="sub">Ordered by SEO impact, with the most important fix first.</p>
+<h3 style="margin-top:8px">Blog index</h3>
+<ol class="concl">
+<li><div class="meta"><span class="badge fail">High</span><span class="badge">Rule 14</span></div><b>Fix pagination.</b> Either make <code>?page=N</code> serve the next set of posts, with crawlable <code>&lt;a href&gt;</code> links between pages, or stop page 2 from being served as a duplicate.</li>
+<li><div class="meta"><span class="badge fail">High</span><span class="badge">Rule 12</span></div><b>Complete the article cards.</b> Add an excerpt, a visible publish date and the author to every card, show full titles in the HTML, and remove the 5 duplicate cards.</li>
+<li><div class="meta"><span class="badge fail">High</span><span class="badge">Rules 5, 6</span></div><b>Add structured data.</b> Add <code>Blog</code> schema listing the posts and a <code>BreadcrumbList</code> (Home › Journal), and fill or remove the empty <code>sameAs</code> entries.</li>
+<li><div class="meta"><span class="badge part">Medium</span><span class="badge">Rules 7, 8, 9</span></div><b>Fix the content and headings.</b> Add 50+ words of intro copy under the H1, rename the H1 to "The 111Journal", and change the announcement bar, cart and currency headings to non-heading elements.</li>
+<li><div class="meta"><span class="badge part">Medium</span><span class="badge">Rule 10</span><span class="badge">Tabs</span></div><b>Fix navigation and search.</b> Merge the two "Wellness" tags, and add a "View all" link under each tab that goes to its blog page. Add a new search bar to the blog page that searches journal articles.</li>
+<li><div class="meta"><span class="badge part">Medium</span><span class="badge">Rules 11, 13</span></div><b>Images and featured post.</b> Add alt text to the 35 card images that lack it, rename the generic image files, and add a featured post above the grid.</li>
+<li><div class="meta"><span class="badge">Low</span><span class="badge">Rules 2, 15</span></div><b>Quick wins.</b> Lengthen the meta description to 140–160 characters, switch <code>og:image</code> to <code>https://</code>, and fill in <code>twitter:image</code>.</li>
+</ol>
+<h3>Article pages</h3>
+<ol class="concl">
+<li><div class="meta"><span class="badge fail">High</span><span class="badge">Rule 12</span><span class="badge">UX</span></div><b>Fix the broken links.</b> Point the "Discover our bestsellers" button to a real collection on posts 1–7, 16 and 39, and remove the "undefined" links on posts 28, 29 and 41. Replace the 13 removed-product links, the 2 deleted-article links and the "-old" URLs with current pages.</li>
+<li><div class="meta"><span class="badge fail">High</span><span class="badge">Rules 5, 8, 13</span></div><b>Fix the article schema and authors.</b> Add <code>BlogPosting</code> schema to the 8 newer-layout posts. Add <code>dateModified</code> and an <code>author</code> with <code>name</code> and <code>url</code> to every post. Replace "111SKIN Store" with the real author, linked to an author page, and make the visible date match <code>datePublished</code>.</li>
+<li><div class="meta"><span class="badge fail">High</span><span class="badge">Rules 6, 7</span></div><b>Add breadcrumbs and fix the H1s.</b> Add a Home › Journal › Post trail with <code>BreadcrumbList</code> to the article template. Demote body H1s to H2 in the 10 posts that have several, and add a one-sentence summary under each title.</li>
+<li><div class="meta"><span class="badge part">Medium</span><span class="badge">Rules 8, 10</span><span class="badge">UX</span></div><b>Combine the two layouts.</b> Move the 38 older posts to one article layout that shows the date under the title, uses H2 and H3 for section headings with no empty or skipped levels, and gives featured images a <code>width</code> and <code>height</code>.</li>
+<li><div class="meta"><span class="badge part">Medium</span><span class="badge">Rules 1, 2</span></div><b>Rewrite titles and descriptions.</b> Bring the 30 titles into 50–60 characters and the 16 descriptions into 140–160 characters, starting with posts 18, 28 and 13.</li>
+<li><div class="meta"><span class="badge part">Medium</span><span class="badge">Rules 11, 14, 15</span></div><b>Fill content gaps.</b> Add related posts to the 12 posts that have none, and a table of contents to the 6 long posts without one (also fix the 4 broken anchors). Expand or merge the 14 posts under 600 words, starting with the large-pores series.</li>
+<li><div class="meta"><span class="badge">Low</span><span class="badge">Images</span><span class="badge">UX</span></div><b>Clean up images and layout.</b> Add alt text and dimensions to inline images, rename the generic image files, fix the duplicate prev/next links, and tighten the alternating layout so text isn't left beside large empty space.</li>
+</ol>
+</section>
+</main>
+<footer>Prepared by FlyRank · Audited November 27, 2026 · Source: raw HTML of 111skin.com/en-eu/blogs/111journal and its 46 posts</footer>
+
+<script>
+(function(){
+  // [#, name, slug, titleLen, descLen, words, h1s, schema, dateShown, related, issues]
+  var P=[
+  [1,"Skin Expert Sean Garrette's Model On and Off Duty Routine","skin-expert-sean-garrettes-model-on-and-off-duty-routine",67,147,807,1,"None","Yes",3,"Broken CTA; 3 removed-product links; 4 \"-old\" links; no H2 (steps are H5); byline \"111SKIN Store\" for a guest expert; alt=\"undefined\""],
+  [2,"The Seasonal Reset With Judy Joo","the-seasonal-reset-with-judy-joo",64,155,1785,1,"None","Yes",3,"Broken CTA; 1 removed-product link; skipped heading levels"],
+  [3,"How Often Should You Use A Chemical Peel?","how-often-should-you-use-a-chemical-peel-an-expert-guide-to-precision-peel",51,158,2528,1,"FAQ only","Yes",3,"No Article schema; broken CTA; 2 broken TOC anchors; 5 skipped levels"],
+  [4,"What Makes A Modern At-Home Chemical Peel Different","what-makes-a-modern-at-home-chemical-peel-different",62,181,2047,1,"FAQ only","Yes",3,"No Article schema; broken CTA; skipped levels"],
+  [5,"111SKIN's guide to pre and post procedure skincare","111skins-guide-to-pre-and-post-procedure-skincare",50,150,1442,1,"None","Yes",3,"Broken CTA; 2 removed-product links; 1 broken TOC anchor"],
+  [6,"The Bridal Skin Timeline","the-bridal-skin-timeline-say-i-do-to-radiant-wedding-ready-skin",65,150,840,1,"None","Yes",3,"Broken CTA; 1 removed-product link; no H2 (H4/H5 only)"],
+  [7,"How to Restore Firm, Radiant Skin After Rapid Weight Loss","how-to-restore-firm-radiant-skin-after-rapid-weight-loss-ozempic-skin",51,151,1261,1,"None","Yes",3,"Broken CTA; 1 removed-product link; no H2"],
+  [8,"Dr Yannis' 2026 skincare predictions","dr-yannis-2026-skincare-predictions",46,130,394,1,"Article","Yes",3,"Under 600 words; opens with an H6; no dateModified"],
+  [9,"Hyperpigmentation During Pregnancy","hyperpigmentation-during-pregnancy-causes-safe-treatments-and-prevention",85,162,1609,2,"Article","Mismatch",4,"2 H1s; no CTA; visible date differs from schema"],
+  [10,"How Your Daily Choices Impact Hyperpigmentation","how-your-daily-choices-impact-hyperpigmentation-prevention",68,165,1217,1,"Article","Mismatch",4,"No CTA; visible date differs from schema"],
+  [11,"Transformative Self-Care Rituals","self-care-journal",64,111,477,1,"Article","No",5,"Under 600 words; 0 in-body links; no CTA"],
+  [12,"111SKIN x Sam McKnight: Guide to Party Prep","111skin-x-sam-mcknight-guide-to-party-prep",43,128,716,1,"Article","No",0,"No related posts; no CTA"],
+  [13,"111SKIN x Fashion Trust Arabia","fta-journal",30,90,289,1,"Article","No",0,"289 words; no headings; no related posts; no CTA; 1 removed-product link"],
+  [14,"How to build a six-step skincare routine","how-to-build-a-six-step-skincare-routine-tailored-to-your-skin-type",43,150,1404,1,"Article","No",0,"No related posts; no CTA; no TOC on a long post"],
+  [15,"Day vs. Night Skincare for Wrinkles","day-vs-night-skincare-for-wrinkles-whats-the-difference",44,142,1552,1,"Article","Mismatch",3,"H6 headings in body; 1 removed-product link; date differs from schema"],
+  [16,"Future-Proof Your Skin: Q&A on Longevity","future-proof-your-skin-qa-on-longevity-with-dr-yannis",66,153,1481,1,"Article","Yes",3,"Broken CTA; 3 removed-product links"],
+  [17,"When to Start Using Skincare for Fine Lines","when-to-start-using-skincare-for-fine-lines-a-plastic-surgeons-guide",63,152,1635,1,"Article","Mismatch",3,"2 removed-product links; skipped level; date differs from schema"],
+  [18,"Choosing The Right Cleanser For You","choosing-the-right-cleanser-for-you",113,185,1230,4,"Article","Mismatch",5,"4 H1s; 113-char title; no TOC; date differs from schema"],
+  [19,"Oil Cleansing: How it works","oil-cleansing-how-it-works-and-why-its-effective",60,188,1069,2,"Article","Mismatch",5,"2 H1s; 188-char description; date differs from schema"],
+  [20,"SPF Myths Debunked","spf-myths-debunked",68,143,1270,1,"Article","Mismatch",5,"No TOC on a long post; 1 removed-product link; shows May 29, schema says Mar 5"],
+  [21,"Is Double Cleansing Right for Your Skin?","is-double-cleansing-right-for-your-skin",51,140,1137,1,"Article","Mismatch",5,"Visible date differs from schema"],
+  [22,"Best Skincare Routines for Hyperpigmentation-Prone Skin","skincare-routines-for-hyperpigmentation-prone-skin",65,154,2621,2,"Article","Mismatch",4,"2 H1s; date differs from schema"],
+  [23,"Understanding Hyperpigmentation and Its Causes","understanding-hyperpigmentation-and-its-causes",56,111,2103,2,"Article","Mismatch",4,"2 H1s; 1 broken TOC anchor; skipped level"],
+  [24,"Glow Like Eva: Festive Skincare Routine","festive-glow-routine",66,141,414,1,"Article","No",5,"Under 600 words; 2 removed-product links; prev/next same post"],
+  [25,"11 Days of Radiance: Holiday Glow Hacks","holiday-glow-hacks",50,151,443,1,"Article","No",5,"Under 600 words; 5 empty headings; 2 removed-product links; headline ≠ H1"],
+  [26,"Niacinamide for Pores","niacinamide-for-pores-benefits-and-effectiveness",59,140,529,2,"Article","No",6,"2 H1s; under 600 words; prev/next same post"],
+  [27,"Large pores on the Nose: do's and don'ts","large-pores-on-the-nose-dos-and-donts",50,148,599,1,"Article","No",5,"9 empty headings; \"-old\" link; prev/next same post"],
+  [28,"Master the Art of Skincare Layering","master-the-art-of-skincare-layering-how-to-use-111skins-products-for-maximum-efficacy1",69,320,532,1,"Article","No",6,"320-char description; slug ends in \"1\"; \"undefined\" link; under 600 words"],
+  [29,"Avoiding Common Mistakes in Treating Large Pores","over-exfoliated-skin",68,158,528,2,"Article","No",6,"2 H1s; \"undefined\" link; under 600 words"],
+  [30,"Why Do I Have Large Pores?","why-do-i-get-large-pores",59,144,561,1,"Article","No",6,"Under 600 words; headline ≠ H1; \"-old\" link"],
+  [31,"How to Reduce Large Pores","how-to-reduce-large-pores-causes-solutions",65,153,558,1,"Article","No",5,"12 empty headings; under 600 words; \"-old\" link"],
+  [32,"How to Effectively Clean Large Pores","how-to-cleanse-large-pores",66,152,528,3,"Article","No",7,"3 H1s; under 600 words"],
+  [33,"Ladies Who Lead: Eva Alexandridis","ladies-who-lead-111skins-eva-alexandridis",53,146,710,1,"Article","No",0,"0 in-body links; no related posts"],
+  [34,"Interview With Founder Yannis Alexandrides","interview-with-yannis-alexandrides",50,155,1862,1,"Article","No",0,"No related posts; no TOC; headline ≠ H1; \"-old\" link"],
+  [35,"The Ultimate Skincare Guide for Teenagers","skincare-guide-for-teenagers",51,157,985,2,"Article","No",0,"2 H1s; no related posts; 1 removed-product link"],
+  [36,"The Black Diamond Cream","the-black-diamond-cream-for-fine-lines",54,143,1155,1,"Article","No",0,"No related posts; 108-char headline"],
+  [37,"Wrinkle Erasing Retinol Patches Masterclass","wrinkle-erasing-retinol-patches-masterclass-recording",76,99,83,1,"Article","No",0,"Video only (83 words); no headings; no related posts; no CTA"],
+  [38,"Unlocking Youthful Skin: Intensive Collection","unlocking-youthful-skin-the-ultimate-guide-to-111skins-intensive-collection",68,94,1325,1,"Article","No",0,"3 empty headings; no related posts; no CTA; no TOC"],
+  [39,"From Harley Street to Home: NAC Y2","from-harley-street-to-home-how-nac-y2-became-skincares-holy-grail",55,148,991,1,"Article","Mismatch",3,"Broken CTA; 2 removed-product links; H4s before the only H2"],
+  [40,"From Clinic to Cabinet: Using Exosomes","from-clinic-to-cabinet-using-exosomes-the-right-way",62,144,1598,1,"Article","Mismatch",4,"3 empty headings; 1 removed-product link"],
+  [41,"How Retinol Works On Large Pores","retinol-for-large-pores-how-it-works-and-benefits",70,151,738,1,"Article","No",6,"\"undefined\" link; 70-char title"],
+  [42,"Treatment for Large Pores: Key Ingredients","treatment-for-large-pores-key-ingredients",62,157,752,1,"Article","No",6,"No visible date; 62-char title"],
+  [43,"Discover the Radiance Collection","radiance-collection-by-111skin",43,144,615,1,"None","Yes",0,"No Article schema; no H2; no related posts; 2 removed-product links"],
+  [44,"NAC Benefits Skin","nac-benefits-skin",66,126,424,1,"Article","No",0,"Under 600 words; 3 empty headings; no related posts; prev/next same"],
+  [45,"A Beginner's Guide to Retinol","a-beginner-s-guide-to-retinol",39,137,1629,1,"Article","No",0,"5 empty headings; no related posts; no CTA; 1 in-body link"],
+  [46,"Best Products and Treatments for Hyperpigmentation","best-products-and-treatments-for-hyperpigmentation",60,135,1390,3,"Article","Mismatch",4,"3 H1s; date differs from schema"]];
+  var esc=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')};
+  var rows=P.map(function(p){
+    var tb=(p[3]<50||p[3]>60)?' bad':'', db=(p[4]<140||p[4]>160)?' bad':'', wb=p[5]<600?' bad':'', hb=p[6]>1?' bad':'', rb=p[9]<3?' bad':'';
+    var sc=p[7]==='Article'?'<span class="badge part">No dateModified</span>':'<span class="badge fail">'+(p[7]==='None'?'Missing':'FAQ only')+'</span>';
+    var dt=p[8]==='Yes'?'<span class="badge pass">Yes</span>':p[8]==='Mismatch'?'<span class="badge part">Mismatch</span>':'<span class="badge fail">No</span>';
+    return '<tr><td class="n">'+p[0]+'</td><td class="post"><a href="https://111skin.com/blogs/111journal/'+p[2]+'">'+esc(p[1])+'</a></td><td class="n num'+tb+'">'+p[3]+'</td><td class="n num'+db+'">'+p[4]+'</td><td class="n num'+wb+'">'+p[5].toLocaleString('en-US')+'</td><td class="n num'+hb+'">'+p[6]+'</td><td>'+sc+'</td><td>'+dt+'</td><td class="n num'+rb+'">'+p[9]+'</td><td class="iss">'+esc(p[10])+'</td></tr>';
+  });
+  var tb=document.getElementById('post-rows'); if(tb) tb.innerHTML=rows.join('');
+})();
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.nav a'));
+  var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  var secs=[].slice.call(document.querySelectorAll('main section[id]'));
+  function update(){
+    var y=window.scrollY+120,cur=null;
+    secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id});
+    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4)cur=secs[secs.length-1].id;
+    links.forEach(function(a){a.classList.remove('active');a.removeAttribute('aria-current')});
+    if(cur&&map[cur]){map[cur].classList.add('active');map[cur].setAttribute('aria-current','true');}
+  }
+  window.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);update();
+})();
+</script>
+
+</body></html>
